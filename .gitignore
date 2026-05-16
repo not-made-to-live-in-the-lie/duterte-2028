@@ -1,0 +1,19 @@
+# Claude Code workspace
+.claude/
+
+# IntelliJ
+.idea/
+
+# Local-only README (don't publish to repo)
+README.md
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+*.log
