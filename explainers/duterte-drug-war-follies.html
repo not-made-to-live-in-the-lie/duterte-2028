@@ -1368,6 +1368,9 @@ body.mode-deck .hint { display: block; }
   }
   const dots = dotsEl.querySelectorAll('.nav__dot');
 
+  prevBtn.addEventListener('click', () => go(current - 1));
+  nextBtn.addEventListener('click', () => go(current + 1));
+
   function go(index) {
     if (!document.body.classList.contains('mode-deck')) {
       if (index < 0 || index >= total) return;
