@@ -99,6 +99,8 @@
   --accent-cyan: #5eead4;
   --accent-purple: #c084fc;
   --accent-purple-soft: #a78bfa;
+  --accent-rose: #c89893;
+  --accent-rose-soft: #d8b5b0;
   --line: rgba(245, 244, 238, 0.08);
   --line-strong: rgba(245, 244, 238, 0.18);
   --serif: 'Fraunces', Georgia, serif;
@@ -1435,6 +1437,62 @@ body.mode-deck .hint { display: block; }
   letter-spacing: 0.18em;
 }
 
+/* Content notice (on cover slide) — warm dusty-rose */
+.content-notice {
+  margin-top: 1.4rem; padding: 1rem 1.2rem;
+  background: rgba(200, 152, 147, 0.06);
+  border: 1px solid rgba(200, 152, 147, 0.3);
+  border-radius: 8px;
+  display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: start;
+  max-width: 60ch;
+}
+.content-notice__icon { font-size: 1.1rem; color: var(--accent-rose); line-height: 1.45; font-weight: 500; }
+.content-notice__text { font-size: 0.85rem; line-height: 1.55; color: var(--text-secondary); }
+.content-notice__text strong { color: var(--accent-rose-soft); font-weight: 600; }
+.content-notice__text em { color: var(--accent-gold); font-style: italic; }
+
+/* Compassion note — soft blush, no red anywhere; highlight is italic + soft underline */
+.compassion-note {
+  margin: 1rem 0 0.4rem; padding: 1rem 1.2rem 1rem 1.4rem;
+  background: rgba(216, 181, 176, 0.045);
+  border-left: 3px solid var(--accent-rose-soft);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--serif); font-style: italic;
+  font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary);
+  max-width: 70ch; position: relative;
+}
+.compassion-note::before {
+  content: '♡  a note for you';
+  display: block; margin-bottom: 0.55rem;
+  font-family: var(--mono); font-style: normal;
+  font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent-rose-soft); font-weight: 500;
+}
+.compassion-note strong {
+  color: var(--text-primary); font-style: italic; font-weight: 500;
+  background: linear-gradient(180deg, transparent 65%, rgba(216, 181, 176, 0.22) 65%);
+  padding: 0 2px;
+}
+.compassion-note em { color: var(--text-primary); font-style: italic; font-weight: 400; }
+
+/* Support resources */
+.support-resources {
+  margin-top: 1.6rem; padding: 1.4rem 1.4rem 1.5rem;
+  background: rgba(15, 15, 23, 0.7); border: 1px solid var(--line);
+  border-radius: 8px; display: grid; gap: 0.9rem;
+}
+.support-resources__head { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-gold); }
+.support-resources__intro { font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); }
+.support-resources__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.support-resources__group { display: grid; gap: 0.4rem; }
+.support-resources__label { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--text-primary); }
+.support-resources__list { font-size: 0.8rem; line-height: 1.6; color: var(--text-secondary); list-style: none; display: grid; gap: 0.2rem; }
+.support-resources__list li { padding-left: 1rem; position: relative; }
+.support-resources__list li::before { content: '→'; position: absolute; left: 0; color: var(--accent-gold); font-family: var(--mono); }
+.support-resources__list a { color: var(--text-secondary); text-decoration: none; border-bottom: 1px dotted var(--line-strong); }
+.support-resources__list a:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+@media (max-width: 700px) { .support-resources__grid { grid-template-columns: 1fr; } }
+
 /* Responsive */
 @media (max-width: 900px) {
   .slide { padding: 7vh 5vw 5vh; }
@@ -1554,6 +1612,20 @@ body.mode-deck .hint { display: block; }
       </p>
       <div class="candle reveal" aria-hidden="true"></div>
       <div class="footnote reveal">For Kian. For Jee. For the 6,000+ named. For the tens of thousands unnamed.</div>
+
+      <div class="content-notice reveal" role="region" aria-label="Content notice">
+        <div class="content-notice__icon" aria-hidden="true">⚠</div>
+        <div class="content-notice__text">
+          <strong>Content notice.</strong> This explainer discusses <em>extrajudicial
+          killings, sexual violence, police violence, and the deaths of named individuals</em>
+          &mdash; including <em>Kian Loyd delos Santos</em> (17) and <em>Jee Ick-joo</em>.
+          The content may stir hard memories for any reader who has <strong>lost a loved one
+          to violence of any kind</strong> (drug-war or not, recent or from years ago),
+          <strong>survived sexual assault</strong>, or carries unresolved grief or anger
+          from a crime. Your experience is real. This deck honors it. Read at your own pace.
+          <strong>Support resources</strong> are on the final slide.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1830,6 +1902,15 @@ body.mode-deck .hint { display: block; }
           <p class="body reveal" style="color: var(--accent-gold);">
             One conviction. Out of an estimated thirty thousand dead. Sit with that number.
           </p>
+          <div class="compassion-note reveal">
+            To the family of Kian, to the families of Carl Arnaiz and Reynaldo de Guzman,
+            to every family of a drug-war victim &mdash; and to anyone reading this who has
+            lost a loved one to homicide of any kind, in any year, related to the drug war
+            or not: <strong>your loved ones are named here with reverence, not as
+            statistics.</strong> This deck exists because their lives mattered, and because
+            the silence has lasted too long. The same insistence applies to your loved
+            one, named or unnamed in this page. We will keep saying their names.
+          </div>
         </div>
       </div>
       <div class="sources">
@@ -1888,6 +1969,19 @@ body.mode-deck .hint { display: block; }
         drug money, per AMLC's own findings, was flowing into accounts connected to the very
         people swinging the rod.
       </p>
+
+      <p class="body reveal" style="margin-top: 0.4rem; padding: 0.95rem 1.2rem; background: rgba(240, 187, 75, 0.06); border-left: 3px solid var(--accent-gold); border-radius: 0 6px 6px 0; max-width: 72ch;">
+        <strong>And here is the bitterest part:</strong> the people the public most wanted
+        jailed &mdash; the <em>actual</em> traffickers, kingpins, and corrupt officials
+        &mdash; were <em>never jailed</em>. Sammy Uy was never raided. Michael Yang was
+        never charged. The "ninja cops" recycling shabu kept their badges. The Dutertes
+        themselves only face accountability now, years later, because of the ICC.
+        <strong>The countless shortcuts</strong> &mdash; the tokhang lists, the planted
+        evidence, the alley executions &mdash; <strong>bypassed every step that could have
+        produced a real conviction.</strong> ~30,000 deaths produced almost zero
+        kingpin convictions. The shortcuts were the policy.
+      </p>
+
       <div class="sources">
         SOURCES · <strong>AMLC executive director testimony (Apr 2026)</strong>; Trillanes affidavit (2016); Rappler / Philstar / Inquirer / GMA News; Jee Ick-joo case — Pampanga RTC conviction.
       </div>
@@ -2137,6 +2231,58 @@ body.mode-deck .hint { display: block; }
             calling.
           </div>
         </div>
+
+        <aside class="support-resources reveal" id="support" aria-labelledby="support-h">
+          <div class="support-resources__head" id="support-h">If reading this stirred something in you &mdash; you are not alone</div>
+          <p class="support-resources__intro">
+            This deck named real people. If you lost someone to the drug war, or to violence
+            of any kind &mdash; or if you are sitting with anger, grief, or guilt that has
+            never had a place to land &mdash; please reach out. These lines and groups exist
+            for you.
+          </p>
+          <div class="support-resources__grid">
+            <div class="support-resources__group">
+              <div class="support-resources__label">For families of EJK / drug-war victims</div>
+              <ul class="support-resources__list">
+                <li><strong>Rise Up for Life and for Rights</strong> &mdash; <a href="https://www.facebook.com/RiseUpForLifeAndForRights/" target="_blank" rel="noopener">facebook.com/RiseUpForLifeAndForRights</a></li>
+                <li><strong>iDEFEND</strong> (In Defense of Human Rights and Dignity Movement)</li>
+                <li><strong>National Union of Peoples' Lawyers (NUPL)</strong> &mdash; legal aid</li>
+                <li><strong>Free Legal Assistance Group (FLAG)</strong> &mdash; pro-bono representation</li>
+                <li><strong>Commission on Human Rights (CHR)</strong> &mdash; (02) 8294-8704</li>
+              </ul>
+            </div>
+            <div class="support-resources__group">
+              <div class="support-resources__label">Mental health &amp; crisis support</div>
+              <ul class="support-resources__list">
+                <li><strong>National Mental Health Crisis Hotline</strong> &mdash; <strong>1553</strong> (toll-free)</li>
+                <li><strong>NCMH Crisis Line</strong> &mdash; 0966-351-4518 / (02) 7-989-USAP (8727)</li>
+                <li><strong>In Touch Community Services</strong> &mdash; (02) 8893-7603</li>
+                <li><strong>DSWD Crisis Intervention</strong> &mdash; dial <strong>1343</strong></li>
+              </ul>
+            </div>
+            <div class="support-resources__group">
+              <div class="support-resources__label">If a family member is at risk now</div>
+              <ul class="support-resources__list">
+                <li><strong>Emergency hotline</strong> &mdash; <strong>911</strong></li>
+                <li>If someone has been picked up by police &mdash; demand a lawyer; call <strong>FLAG</strong> or <strong>NUPL</strong> before any statement.</li>
+                <li>Document everything: names, badge numbers, vehicles, witnesses.</li>
+              </ul>
+            </div>
+            <div class="support-resources__group">
+              <div class="support-resources__label">For documenting / contributing to the record</div>
+              <ul class="support-resources__list">
+                <li><strong>Dahas (UP)</strong> &mdash; <a href="https://dahas.upd.edu.ph/" target="_blank" rel="noopener">dahas.upd.edu.ph</a> &mdash; drug-war fatality database</li>
+                <li><strong>Rappler "Drug war victims" topic page</strong></li>
+                <li><strong>ICC Trust Fund for Victims</strong> &mdash; international support for the trial process</li>
+              </ul>
+            </div>
+          </div>
+          <p class="support-resources__intro" style="margin-top: 0.4rem; font-size: 0.78rem; color: var(--text-muted);">
+            If one number doesn't respond, try another. Reach out to a parish, a barangay
+            social worker, a trusted friend. <strong>You are not a burden. You are someone
+            whose loss matters, and whose life still matters.</strong>
+          </p>
+        </aside>
       </div>
     </div>
   </section>

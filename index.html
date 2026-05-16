@@ -139,6 +139,8 @@
   --accent-red-glow: rgba(226, 58, 58, 0.35);
   --accent-gold: #f0bb4b;
   --accent-purple: #c084fc;
+  --accent-rose: #c89893;
+  --accent-rose-soft: #d8b5b0;
   --line: rgba(245, 244, 238, 0.08);
   --line-strong: rgba(245, 244, 238, 0.18);
   --serif: 'Fraunces', Georgia, serif;
@@ -387,6 +389,23 @@ footer.landing__footer a { color: var(--text-secondary); text-decoration: none; 
 footer.landing__footer a:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
 footer.landing__footer em { font-style: italic; color: var(--accent-gold); text-transform: none; letter-spacing: 0.02em; }
 
+/* Content notice on the landing page */
+.landing-warning {
+  margin-top: 1rem;
+  padding: 1.1rem 1.3rem;
+  background: rgba(200, 152, 147, 0.06);
+  border: 1px solid rgba(200, 152, 147, 0.3);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.landing-warning__icon { font-size: 1.2rem; color: var(--accent-rose); line-height: 1.4; font-weight: 500; }
+.landing-warning__text { font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); }
+.landing-warning__text strong { color: var(--accent-rose-soft); font-weight: 600; }
+.landing-warning__text em { color: var(--accent-gold); font-style: italic; }
+
 @media (max-width: 700px) {
   .landing { padding: 8vh 5vw 6vh; gap: 2.5rem; }
   .cards { grid-template-columns: 1fr; gap: 1rem; }
@@ -461,6 +480,22 @@ footer.landing__footer em { font-style: italic; color: var(--accent-gold); text-
           all over again.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="landing-warning" role="region" aria-label="Content notice">
+    <div class="landing-warning__icon" aria-hidden="true">⚠</div>
+    <div class="landing-warning__text">
+      <strong>A note before you open either deck.</strong> Both explainers discuss
+      <em>sexual violence, homicide, extrajudicial killings, and the deaths of named
+      individuals</em>. The discussion is general &mdash; not just about the drug war
+      &mdash; and the content may stir hard memories for <strong>any reader who has
+      survived sexual assault, lost a loved one to violence, or carries unresolved
+      grief or anger from a crime</strong>, whether recent or from years ago, related
+      to the drug war or not. The work is meant to honor survivors and the dead, not
+      to flatten them into statistics. Please read at your own pace. Each deck closes
+      with <strong>support resources</strong> &mdash; crisis hotlines, legal-aid groups,
+      and survivor-support organizations in the Philippines.
     </div>
   </section>
 

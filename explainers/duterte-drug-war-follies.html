@@ -99,6 +99,8 @@
   --accent-cyan: #5eead4;
   --accent-purple: #c084fc;
   --accent-purple-soft: #a78bfa;
+  --accent-rose: #c89893;
+  --accent-rose-soft: #d8b5b0;
   --line: rgba(245, 244, 238, 0.08);
   --line-strong: rgba(245, 244, 238, 0.18);
   --serif: 'Fraunces', Georgia, serif;
@@ -483,6 +485,134 @@ body.mode-deck .hint { display: block; }
   100% { opacity: 0; transform: translateY(-16px); filter: blur(3px); }
 }
 
+/* Content notice (on cover slide) — warm dusty-rose, compassionate-not-alarming */
+.content-notice {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  background: rgba(200, 152, 147, 0.06);
+  border: 1px solid rgba(200, 152, 147, 0.3);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  max-width: 60ch;
+}
+.content-notice__icon {
+  font-size: 1.1rem;
+  color: var(--accent-rose);
+  line-height: 1.45;
+  font-weight: 500;
+}
+.content-notice__text {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.content-notice__text strong { color: var(--accent-rose-soft); font-weight: 600; }
+.content-notice__text em { color: var(--accent-gold); font-style: italic; }
+
+/* Compassion note (inside sensitive slides) — soft blush, never alarm-toned.
+   Highlighting inside the note uses italic + light primary text, not color, so
+   nothing in this block reads as a warning. */
+.compassion-note {
+  margin: 1rem 0 0.4rem;
+  padding: 1rem 1.2rem 1rem 1.4rem;
+  background: rgba(216, 181, 176, 0.045);
+  border-left: 3px solid var(--accent-rose-soft);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 70ch;
+  position: relative;
+}
+.compassion-note::before {
+  content: '♡  a note for you';
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-rose-soft);
+  font-weight: 500;
+}
+.compassion-note strong {
+  color: var(--text-primary);
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(180deg, transparent 65%, rgba(216, 181, 176, 0.22) 65%);
+  padding: 0 2px;
+}
+.compassion-note em { color: var(--text-primary); font-style: italic; font-weight: 400; }
+
+/* Support resources block (final slide) */
+.support-resources {
+  margin-top: 1.6rem;
+  padding: 1.4rem 1.4rem 1.5rem;
+  background: rgba(15, 15, 23, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.9rem;
+}
+.support-resources__head {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+.support-resources__intro {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.support-resources__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.support-resources__group { display: grid; gap: 0.4rem; }
+.support-resources__label {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.support-resources__list {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+}
+.support-resources__list li {
+  padding-left: 1rem;
+  position: relative;
+}
+.support-resources__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+  font-family: var(--mono);
+}
+.support-resources__list a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--line-strong);
+}
+.support-resources__list a:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+@media (max-width: 700px) {
+  .support-resources__grid { grid-template-columns: 1fr; }
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .slide { padding: 7vh 5vw 5vh; }
@@ -566,6 +696,22 @@ body.mode-deck .hint { display: block; }
       <p class="body reveal" style="color: var(--text-muted); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 1.2rem;">
         High-quality sources only · NIDA · WHO · CDC · BJS · OJP · HRW · Amnesty · ICC · peer-reviewed journals
       </p>
+
+      <div class="content-notice reveal" role="region" aria-label="Content notice">
+        <div class="content-notice__icon" aria-hidden="true">⚠</div>
+        <div class="content-notice__text">
+          <strong>Content notice.</strong> This explainer discusses <em>sexual violence,
+          homicide, extrajudicial killings, and the deaths of named individuals</em>.
+          The discussion is general &mdash; about research on perpetration, the drug war,
+          and crime broadly. It may stir hard memories for any reader who has <strong>survived
+          sexual assault</strong>, <strong>lost a loved one to any kind of violence</strong>
+          (whether tied to the drug war or not, whether recent or from years ago), or
+          <strong>still carries unresolved anger or grief from a crime</strong>. Your
+          experience is real. This deck honors it. Read at your own pace &mdash; or skip
+          the stereotype-debunking slides and go straight to <em>slide 13</em> (the
+          resolution) and <em>slide 14</em> (support resources for survivors and families).
+        </div>
+      </div>
     </div>
   </section>
 
@@ -649,6 +795,18 @@ body.mode-deck .hint { display: block; }
         how a person was shaped before any substance entered the picture.
       </p>
 
+      <div class="compassion-note reveal">
+        To anyone reading this who has survived sexual assault &mdash; <strong>whenever it
+        happened, whoever did it, and whether the perpetrator used substances or not</strong>:
+        your experience is real, and what was done to you was never your fault. The research
+        patterns above describe populations of perpetrators, not your story. Statistics
+        cannot measure your pain, and they are not meant to. They are here for one reason
+        only: to show that the cartoon used to justify EJKs does not match the science
+        &mdash; and that the killings did not protect survivors like you. <strong>The
+        unfinished work of real safety, real justice, and real accountability for the
+        person who harmed you is still owed to you.</strong>
+      </div>
+
       <div class="sources">
         SOURCES · <strong>OJP/DOJ</strong> Groth typology (PubMed 910975); <strong>RAINN</strong> perpetrator-victim data; <strong>PMC 3177166</strong> Abbey et al., <em>Alcohol's Role in Sexual Violence Perpetration</em>
       </div>
@@ -695,6 +853,16 @@ body.mode-deck .hint { display: block; }
         Homicide is overwhelmingly driven by interpersonal disputes, intimate-partner violence,
         and gang/economic conflict &mdash; not by what someone smoked yesterday.
       </p>
+
+      <div class="compassion-note reveal">
+        To anyone grieving someone lost to homicide &mdash; drug-related, vigilante, EJK,
+        domestic, accident-disguised-as-violence, or any cause at all, whether years ago or
+        recent: <strong>this deck does not minimize your loss.</strong> Statistics are how we
+        expose policy failures; they are not how we measure your grief. Your loved one was
+        not a number. The numbers exist here to show that the policy did not honor them
+        either &mdash; it killed in their name without protecting anyone, and it never
+        delivered the justice their case deserved.
+      </div>
 
       <div class="sources">
         SOURCES · <strong>BJS</strong> <em>Drug-Related Crime</em> &amp; <em>Drugs &amp; Crime Facts</em>; <strong>OJP</strong> Goldstein 1985 tripartite framework; <strong>WHO</strong> Violence Against Women fact sheet
@@ -743,6 +911,17 @@ body.mode-deck .hint { display: block; }
         but it is conditional, narrow, and the implied solution is <strong>treatment + economic
         safety nets</strong>. Not bullets. Never bullets.
       </p>
+
+      <div class="compassion-note reveal">
+        To anyone, anywhere, who has been hurt by theft, addiction-adjacent crime, or a
+        loved one's substance struggle &mdash; <strong>whether during the drug war or long
+        before it</strong>: your fear was, and is, real. The case here is not that the
+        harm you experienced was imaginary &mdash; it is that <strong>bullets in alleys
+        did not protect you</strong>, and the kingpins were never jailed. The data shows
+        it. You deserved real safety: rehab access, livelihood, community policing, due
+        process for the few who do harm, and accountability all the way up the chain.
+        Not a war that killed your neighbors and left the actual traffickers untouched.
+      </div>
 
       <div class="sources">
         SOURCES · <strong>BJS</strong> <em>Drugs &amp; Crime Facts</em>; <strong>OJP</strong> <em>Professional Thieves and Drugs</em>; <strong>Goldstein 1985</strong> "economic-compulsive" framework
@@ -928,6 +1107,18 @@ body.mode-deck .hint { display: block; }
 
       <p class="body reveal" style="color: var(--accent-red); font-weight: 600; max-width: 70ch;">
         It wasn't a war on drugs. It was a war on people who couldn't fight back.
+      </p>
+
+      <p class="body reveal" style="margin-top: 0.4rem; padding: 0.95rem 1.2rem; background: rgba(240, 187, 75, 0.06); border-left: 3px solid var(--accent-gold); border-radius: 0 6px 6px 0; max-width: 72ch;">
+        <strong>And the deepest folly:</strong> the people the public most wanted off the
+        streets &mdash; the actual <em>traffickers, kingpins, corrupt cops, and rapists who
+        had power</em> &mdash; were not jailed. Tens of thousands of <em>suspects</em> were
+        killed without trial; almost <strong>zero kingpins were convicted</strong>. The
+        countless shortcuts &mdash; barangay-list hearsay, anonymous drop-box tips, planted
+        guns, no lawyer, no due process &mdash; <strong>bypassed every step that could have
+        produced a real conviction.</strong> Real victims of crime got no justice. Real
+        perpetrators with money or rank walked away. The shortcuts were the policy. The
+        shortcuts were the failure.
       </p>
 
       <div class="disclaimer reveal">
@@ -1246,6 +1437,57 @@ body.mode-deck .hint { display: block; }
           calling.
         </div>
       </div>
+
+      <aside class="support-resources reveal" id="support" aria-labelledby="support-h">
+        <div class="support-resources__head" id="support-h">If reading this stirred something in you &mdash; you are not alone</div>
+        <p class="support-resources__intro">
+          This explainer talks about hard things. If you are a survivor of sexual assault,
+          if you lost someone to the drug war, or if you are sitting with grief that has
+          never had a place to land &mdash; please reach out. These lines and groups exist
+          for you.
+        </p>
+        <div class="support-resources__grid">
+          <div class="support-resources__group">
+            <div class="support-resources__label">For survivors of sexual violence</div>
+            <ul class="support-resources__list">
+              <li><strong>DSWD Crisis Intervention</strong> &mdash; dial <strong>1343</strong> (PH; also anti-trafficking)</li>
+              <li><strong>Women's Crisis Center</strong> &mdash; (02) 8927-7882 / 0917-862-2530</li>
+              <li><strong>Lunas Collective</strong> &mdash; <a href="https://www.lunascollective.org/" target="_blank" rel="noopener">lunascollective.org</a></li>
+              <li><strong>Philippine Commission on Women</strong> &mdash; <a href="https://pcw.gov.ph/" target="_blank" rel="noopener">pcw.gov.ph</a></li>
+            </ul>
+          </div>
+          <div class="support-resources__group">
+            <div class="support-resources__label">For families of EJK / drug-war victims</div>
+            <ul class="support-resources__list">
+              <li><strong>Rise Up for Life and for Rights</strong> &mdash; <a href="https://www.facebook.com/RiseUpForLifeAndForRights/" target="_blank" rel="noopener">facebook.com/RiseUpForLifeAndForRights</a></li>
+              <li><strong>iDEFEND</strong> (In Defense of Human Rights and Dignity Movement)</li>
+              <li><strong>National Union of Peoples' Lawyers</strong> &mdash; legal aid for EJK families</li>
+              <li><strong>Free Legal Assistance Group (FLAG)</strong> &mdash; pro-bono representation</li>
+            </ul>
+          </div>
+          <div class="support-resources__group">
+            <div class="support-resources__label">Mental health &amp; crisis support</div>
+            <ul class="support-resources__list">
+              <li><strong>National Mental Health Crisis Hotline</strong> &mdash; <strong>1553</strong> (toll-free, nationwide)</li>
+              <li><strong>NCMH Crisis Line</strong> &mdash; 0966-351-4518 / (02) 7-989-USAP (8727)</li>
+              <li><strong>In Touch Community Services</strong> &mdash; (02) 8893-7603</li>
+            </ul>
+          </div>
+          <div class="support-resources__group">
+            <div class="support-resources__label">If you are in immediate danger</div>
+            <ul class="support-resources__list">
+              <li><strong>Emergency hotline</strong> &mdash; <strong>911</strong></li>
+              <li>If a family member has been picked up by police &mdash; demand a lawyer; call <strong>FLAG</strong> or <strong>NUPL</strong> before any statement.</li>
+              <li>Document everything: names, badge numbers, vehicles, witnesses. The record matters later.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="support-resources__intro" style="margin-top: 0.4rem; font-size: 0.78rem; color: var(--text-muted);">
+          Hotlines are not perfect. If one number doesn't respond, try another. Reach out to a
+          parish, a barangay social worker, a trusted friend. You are not a burden. You are
+          someone whose life was cut against, and whose life still matters.
+        </p>
+      </aside>
     </div>
   </section>
 
