@@ -1,0 +1,11 @@
+# Filipino Reckonings on Duterte's Drug War
+# All content is intentionally public.
+
+User-agent: *
+Allow: /
+
+# Disallow nothing — this is a public advocacy project.
+Disallow:
+
+# Sitemap location
+Sitemap: https://not-made-to-live-in-the-lie.github.io/duterte-2028/sitemap.xml
