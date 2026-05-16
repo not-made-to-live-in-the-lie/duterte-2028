@@ -1350,6 +1350,26 @@ body.mode-deck .hint { display: block; }
 }
 .sources strong { color: var(--text-secondary); font-weight: 400; }
 
+.disclaimer {
+  margin-top: 1.4rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(15, 15, 23, 0.5);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  max-width: 100%;
+}
+.disclaimer::before {
+  content: 'NOTICE · ';
+  color: var(--accent-gold);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .slide { padding: 7vh 5vw 5vh; }
@@ -1538,9 +1558,10 @@ body.mode-deck .hint { display: block; }
           <div class="contrast-card__label">What was actually happening</div>
           <div class="contrast-card__title">Private planes, Davao–Manila, multiple times a week</div>
           <div class="contrast-card__detail">
-            Bong Go, the Dutertes, on private aircraft — routine, frequent, expensive.
+            Persistent reports of private-aircraft use by Bong Go and the Dutertes &mdash;
+            routine, frequent, expensive &mdash; contradicting the carefully framed humility.
             Years later, the AMLC would confirm <strong>₱6.77 billion</strong> in large and
-            suspicious transactions flowing through Sara Duterte's accounts (2006–2025).
+            suspicious transactions flowing through Sara Duterte's accounts (2006&ndash;2025).
           </div>
         </div>
       </div>
@@ -1796,8 +1817,8 @@ body.mode-deck .hint { display: block; }
       <p class="body reveal" style="margin-top: 0.6rem;">
         <strong>That is the smokescreen they used.</strong> The drug war was not a war on
         drugs. It was theater &mdash; loud, bloody, photogenic theater &mdash; while the actual
-        drug money was being deposited, encashed, and protected by the very people swinging the
-        rod.
+        drug money, per AMLC's own findings, was flowing into accounts connected to the very
+        people swinging the rod.
       </p>
       <div class="sources">
         SOURCES · <strong>AMLC executive director testimony (Apr 2026)</strong>; Trillanes affidavit (2016); Rappler / Philstar / Inquirer / GMA News; Jee Ick-joo case — Pampanga RTC conviction.
@@ -1913,6 +1934,9 @@ body.mode-deck .hint { display: block; }
           <div class="mirror__ref">Proverbs 31:8–9</div>
         </div>
       </div>
+      <div class="sources" style="position: static; margin-top: 1.5rem;">
+        VICTIM NAMES IN BACKGROUND · <strong>HRW</strong>, <strong>CPJ</strong>, Wikipedia, Inquirer, Rappler, GMA News, MindaNews. Verified civilian cases · <em>presented in memoriam, not as legal claims</em>.
+      </div>
     </div>
   </section>
 
@@ -1986,6 +2010,9 @@ body.mode-deck .hint { display: block; }
           <div class="dozen__title">You disqualified your future protest.</div>
           <div class="dozen__body">When this violence eventually reaches your family — and it will — <strong>your moral outrage will sound like a hypocrite's</strong>.</div>
         </div>
+      </div>
+      <div class="disclaimer reveal">
+        Allegations cited above are drawn from public proceedings &mdash; ICC charges and warrants, Senate Blue Ribbon and House Justice Committee hearings, Ombudsman filings, COA reports, AMLC disclosures &mdash; and from verified press reporting (Rappler, Inquirer, GMA News, Philstar, Mindanews, CPJ, HRW, Amnesty, RSF). Where cases remain unadjudicated, &ldquo;alleged&rdquo; is implied. All persons named are presumed innocent until convicted by a court of competent jurisdiction.
       </div>
     </div>
   </section>
@@ -2177,14 +2204,14 @@ body.mode-deck .hint { display: block; }
     { title: 'Sara · unexplained wealth', detail: '₱88M peak SALN vs. flows' },
     // ── Drug money to Dutertes (5)
     { title: 'Sammy Uy checks', detail: '₱181.6M · alleged drug lord → Dutertes' },
-    { title: 'Michael Yang · drug lord', detail: 'Alleged in ICC affidavit · 2026' },
+    { title: 'Michael Yang', detail: 'Alleged drug lord in ICC affidavit · 2026' },
     { title: 'Lascañas ICC affidavit', detail: 'DDS insider · drug trade links' },
-    { title: 'Davao Death Squad', detail: 'Pre-presidency · 1,400+ killings' },
+    { title: 'Davao Death Squad', detail: '~1,400 killings linked to DDS (HRW estimate)' },
     { title: 'ICC crimes vs humanity', detail: '3 counts murder · trial 2026' },
     // ── Davao-era press killings (mayoralty 1988-2016)
     { title: 'Pete Dahan · DXUM', detail: 'Davao broadcaster · killed early 1990s' },
     { title: 'Jun Pala · DXGO', detail: 'Davao commentator · killed Sep 6, 2003' },
-    { title: 'Lascañas confession · Pala', detail: 'DDS leader: "Duterte ordered the hit"' },
+    { title: 'Lascañas confession · Pala', detail: 'DDS leader claims Duterte ordered hit' },
     { title: 'Jessie Camangyan', detail: 'Davao Oriental broadcaster · killed June 2010' },
     { title: 'Aldion Layao · DXRP', detail: 'Davao block-timer · killed April 2012' },
     { title: 'Nestor Libaton · DXHM', detail: 'Mati, Davao Or. (Catholic radio) · May 2012' },
@@ -2194,16 +2221,16 @@ body.mode-deck .hint { display: block; }
     { title: 'Paolo · BOC ₱6.4B shabu', detail: '600 kg crystal meth · 2017' },
     { title: 'Magnetic lifters case', detail: '1.68 tonnes shabu · 2018' },
     { title: 'Mark Taguba testimony', detail: '"Handler of Paolo" · ₱5M enrolment' },
-    { title: '"Davao Group" customs', detail: 'Paolo · alleged smuggling ring' },
+    { title: '"Davao Group" customs', detail: 'Paolo · alleged ring · Mark Taguba testimony' },
     { title: 'Lascañas: Paolo smuggling', detail: 'ICC affidavit pages headlined it' },
     // ── Mans Carpio (Sara's husband) (2)
-    { title: 'Mans Carpio drug raps', detail: 'Sara\'s husband · 2024 complaint' },
+    { title: 'Mans Carpio', detail: 'Named in 2024 Trillanes drug-smuggling complaint' },
     { title: 'Trillanes 2024 complaint', detail: 'Paolo + Carpio + Yang · smuggling' },
     // ── Sebastian "Baste" Duterte (1)
     { title: 'Baste · "blind eye"', detail: 'Davao mayor · corruption critique' },
     // ── Bong Go (5)
     { title: 'CLTG / Alfrego Builders', detail: '₱6.95B Davao contracts · Go\'s kin' },
-    { title: 'Bong Go plunder case', detail: 'Filed Oct 2025 · "main plunderer"' },
+    { title: 'Bong Go plunder case', detail: 'Oct 2025 complaint alleges "main plunderer" role' },
     { title: 'Navy frigate deal', detail: 'Bong Go inquiry · 2018' },
     { title: 'Bong Go SAP powers', detail: '₱275B emergency · accountability gap' },
     { title: 'NBI subpoena on student', detail: 'Critic harassed for FB post · 2020' },
@@ -2222,7 +2249,7 @@ body.mode-deck .hint { display: block; }
     { title: 'P50M SEA Games cauldron', detail: 'Justified as "work of art"' },
     { title: 'Cayetano · dual posts', detail: 'Constitutional issue · DFA + Phisgoc' },
     // ── Mark Villar / DPWH (4)
-    { title: 'Mark Villar · DPWH kickbacks', detail: '10% on infra projects · Bernardo' },
+    { title: 'Mark Villar · DPWH', detail: 'Alleged 10% kickbacks · Bernardo Senate testimony' },
     { title: 'I&E Construction · ₱18.5B', detail: 'Linked to cousin Carlo Aguilar' },
     { title: 'Motiontrade · ₱2.8B', detail: 'Uncle Christian Aguilar · floods' },
     { title: 'Build, Build, Build', detail: 'Cost overruns · accountability gaps' },
@@ -2233,7 +2260,7 @@ body.mode-deck .hint { display: block; }
     // ── Flood Control Scam senators (5)
     { title: 'Bernardo flood control affidavit', detail: 'Sep 2025 · DPWH whistle-blower' },
     { title: 'Chiz Escudero · ₱800M', detail: 'Valenzuela/Marinduque projects · 2025' },
-    { title: 'Escudero · ₱160M kickbacks', detail: 'Via friend Maynard Ngu' },
+    { title: 'Escudero · ₱160M', detail: 'Alleged kickbacks via Maynard Ngu · Bernardo affidavit' },
     { title: 'Nancy Binay · flood scam', detail: 'Named in Bernardo affidavit' },
     { title: 'Bong Revilla · flood scam', detail: 'Named in Bernardo affidavit' },
     // ── Customs / BI / BuCor (4)
@@ -2290,9 +2317,9 @@ body.mode-deck .hint { display: block; }
     { title: 'Bayanihan Heal as One funds', detail: 'Disbursement gaps · COA flagged' },
     { title: 'Drug war fund · LGU level', detail: 'Cash incentives for "kills"' },
     // ── Family-adjacent figures (3)
-    { title: 'Honeylet Avanceña', detail: 'Sammy Uy checks · ₱53.28M (with Kitty)' },
-    { title: 'Sebastian Duterte · checks', detail: '₱51.58M from Sammy Uy · 2011-13' },
-    { title: 'Paolo Duterte · checks', detail: '₱38.81M from Sammy Uy · 2011-13' }
+    { title: 'AMLC · Honeylet & Kitty', detail: 'Disclosed ₱53.28M Uy transactions · House hearings' },
+    { title: 'AMLC · Sebastian Duterte', detail: 'Disclosed ₱51.58M Uy transactions · 2011-13' },
+    { title: 'AMLC · Paolo Duterte', detail: 'Disclosed ₱38.81M Uy transactions · 2011-13' }
   ];
   const scandalSummaries = [
     { title: '…and dozens more', detail: 'In one administration. Six years.' },

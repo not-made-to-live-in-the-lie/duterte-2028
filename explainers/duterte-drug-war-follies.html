@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="The folly of Duterte's drug war, in thirteen slides. The composite lie that drug addicts are rapists, killers, and thieves who deserve to die &mdash; debunked with high-quality evidence. The folly of believing it. The cost of acting on it: ~30,000 mostly-poor dead." />
+<meta name="theme-color" content="#07070c" />
+<meta property="og:title" content="The Folly of the Drug War — What Actually Makes a Rapist, a Killer, a Thief" />
+<meta property="og:description" content="A thirteen-slide reckoning with the composite lie that justified Duterte's drug war &mdash; and the folly of every part of it." />
+<meta property="og:type" content="article" />
+<title>The Folly of the Drug War — What Actually Makes a Rapist, a Killer, a Thief</title>
+
+<!-- =====================================================================
+     GOOGLE ANALYTICS (GA4) — see ../README.md for setup
+     1. Replace 'G-XXXXXXXXXX' below with your GA4 Measurement ID.
+     2. Leaving the placeholder disables GA (no network calls are made).
+     ===================================================================== -->
+<script>window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';</script>
+<script>
+(function() {
+  var id = window.GA_MEASUREMENT_ID;
+  if (!id || id === 'G-XXXXXXXXXX') return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', id, { send_page_view: false });
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg-base: #07070c;
+  --bg-deeper: #030305;
+  --bg-card: #0f0f17;
+  --text-primary: #f5f4ee;
+  --text-secondary: #c4c1b8;
+  --text-muted: #7a7468;
+  --accent-red: #e23a3a;
+  --accent-red-deep: #7a1414;
+  --accent-red-glow: rgba(226, 58, 58, 0.35);
+  --accent-gold: #f0bb4b;
+  --accent-gold-deep: #8a5e10;
+  --accent-cyan: #5eead4;
+  --accent-purple: #c084fc;
+  --accent-purple-soft: #a78bfa;
+  --line: rgba(245, 244, 238, 0.08);
+  --line-strong: rgba(245, 244, 238, 0.18);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { overflow-x: hidden; scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+body.mode-deck { height: 100%; overflow: hidden; scroll-behavior: auto; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse at top left, rgba(226, 58, 58, 0.08), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(240, 187, 75, 0.04), transparent 50%);
+  pointer-events: none; z-index: 1;
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px);
+  pointer-events: none; z-index: 2; mix-blend-mode: overlay;
+}
+
+.deck { position: relative; width: 100%; z-index: 3; }
+body.mode-deck .deck { width: 100vw; height: 100vh; overflow: hidden; }
+
+.progress { display: none; position: fixed; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.04); z-index: 100; }
+body.mode-deck .progress { display: block; }
+.progress__fill { height: 100%; background: linear-gradient(90deg, var(--accent-red), var(--accent-gold)); width: 8%; transition: width 600ms cubic-bezier(0.22, 1, 0.36, 1); box-shadow: 0 0 12px var(--accent-red-glow); }
+
+.slide {
+  position: relative; width: 100%; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8vh 6vw;
+  opacity: 1; transform: none; pointer-events: auto; transition: none;
+  border-bottom: 1px solid var(--line);
+}
+.slide:last-child { border-bottom: 0; }
+body.mode-deck .slide {
+  position: absolute; inset: 0; min-height: 0; padding: 5vh 8vw;
+  opacity: 0; transform: translateY(40px); pointer-events: none;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  border-bottom: 0;
+}
+body.mode-deck .slide.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+body.mode-deck .slide.exiting { opacity: 0; transform: translateY(-40px); }
+
+.slide__inner { width: 100%; max-width: 1280px; display: grid; gap: clamp(1.2rem, 2.5vw, 2.2rem); }
+body.mode-deck .slide__inner { height: 100%; align-content: center; }
+
+.eyebrow {
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 400;
+  letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-gold);
+  display: flex; align-items: center; gap: 1rem;
+}
+.eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--accent-gold); }
+.eyebrow--red { color: var(--accent-red); }
+.eyebrow--red::before { background: var(--accent-red); }
+
+h1.headline {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(2.2rem, 6.5vw, 5.5rem);
+  line-height: 1.02; letter-spacing: -0.025em; color: var(--text-primary);
+}
+h1.headline em { font-style: italic; font-weight: 400; color: var(--accent-gold); }
+
+h2.subhead {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
+  line-height: 1.1; letter-spacing: -0.018em; color: var(--text-primary);
+}
+h2.subhead em { font-style: italic; color: var(--accent-red); }
+
+p.lede {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  line-height: 1.45; color: var(--text-secondary); max-width: 56ch;
+}
+p.body {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.65; color: var(--text-secondary); max-width: 64ch;
+}
+p.body strong { color: var(--text-primary); font-weight: 600; }
+p.body em { color: var(--accent-gold); font-style: normal; font-weight: 500; }
+
+/* Reveal animations */
+body.mode-deck .slide.active .reveal,
+body:not(.mode-deck) .slide.in-view .reveal {
+  animation: revealUp 900ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+body.mode-deck .slide.active .reveal:nth-child(1), body:not(.mode-deck) .slide.in-view .reveal:nth-child(1) { animation-delay: 100ms; }
+body.mode-deck .slide.active .reveal:nth-child(2), body:not(.mode-deck) .slide.in-view .reveal:nth-child(2) { animation-delay: 220ms; }
+body.mode-deck .slide.active .reveal:nth-child(3), body:not(.mode-deck) .slide.in-view .reveal:nth-child(3) { animation-delay: 340ms; }
+body.mode-deck .slide.active .reveal:nth-child(4), body:not(.mode-deck) .slide.in-view .reveal:nth-child(4) { animation-delay: 460ms; }
+body.mode-deck .slide.active .reveal:nth-child(5), body:not(.mode-deck) .slide.in-view .reveal:nth-child(5) { animation-delay: 580ms; }
+body.mode-deck .slide.active .reveal:nth-child(6), body:not(.mode-deck) .slide.in-view .reveal:nth-child(6) { animation-delay: 700ms; }
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(28px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Navigation (deck-mode only) */
+.nav {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0;
+  padding: 1.4rem 3vw;
+  align-items: center; justify-content: space-between; z-index: 50;
+  background: linear-gradient(to top, rgba(7,7,12,0.9), transparent);
+}
+body.mode-deck .nav { display: flex; }
+.nav__counter { font-family: var(--mono); font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.15em; }
+.nav__counter strong { color: var(--text-primary); font-weight: 600; }
+.nav__controls { display: flex; gap: 0.6rem; align-items: center; }
+.nav__btn {
+  background: rgba(245, 244, 238, 0.04); border: 1px solid var(--line); color: var(--text-secondary);
+  width: 44px; height: 44px; border-radius: 50%; font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 200ms ease; font-family: var(--mono);
+}
+.nav__btn:hover { background: rgba(226, 58, 58, 0.12); border-color: var(--accent-red); color: var(--text-primary); }
+.nav__btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.nav__dots { display: flex; gap: 6px; padding: 0 1.2rem; flex-wrap: wrap; max-width: 50vw; justify-content: center; }
+.nav__dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(245, 244, 238, 0.15); cursor: pointer; transition: all 250ms ease; border: 0; padding: 0; }
+.nav__dot.active { background: var(--accent-red); width: 24px; border-radius: 4px; box-shadow: 0 0 8px var(--accent-red-glow); }
+.nav__dot:hover { background: var(--accent-gold); }
+
+.hint {
+  display: none; position: fixed; top: 1.4rem; right: 2rem;
+  font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted);
+  letter-spacing: 0.18em; text-transform: uppercase; z-index: 50; opacity: 0.6;
+}
+body.mode-deck .hint { display: block; }
+.hint kbd { display: inline-block; border: 1px solid var(--line-strong); padding: 2px 6px; border-radius: 3px; margin: 0 2px; background: rgba(0,0,0,0.4); color: var(--text-secondary); }
+
+/* View toggle */
+.view-toggle {
+  position: fixed; top: 0.9rem; left: 50%; transform: translateX(-50%); z-index: 60;
+  display: flex; background: rgba(8, 8, 12, 0.88); border: 1px solid var(--line-strong);
+  border-radius: 999px; padding: 3px;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+.view-toggle__btn {
+  background: transparent; border: 0; color: var(--text-muted);
+  font-family: var(--mono); font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.5rem 1.1rem; border-radius: 999px; cursor: pointer;
+  transition: color 180ms ease, background 180ms ease; min-height: 32px;
+}
+.view-toggle__btn:hover { color: var(--text-secondary); }
+.view-toggle__btn[aria-pressed="true"] { background: var(--accent-gold); color: var(--bg-base); }
+.view-toggle__btn:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
+
+/* Cross-deck link */
+.cross-link {
+  position: fixed; top: 0.9rem; right: 1rem; z-index: 60;
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--text-muted); text-decoration: none;
+  padding: 0.45rem 0.85rem; border: 1px solid var(--line);
+  border-radius: 999px; background: rgba(8,8,12,0.7);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  transition: color 200ms ease, border-color 200ms ease;
+}
+.cross-link:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
+
+/* Two-column directional card (forward / reverse refutation) */
+.bidirect {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.bidirect__col {
+  padding: 1.6rem 1.5rem; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--bg-card);
+  display: grid; gap: 0.85rem;
+}
+.bidirect__col--forward { border-color: rgba(94, 234, 212, 0.22); background: linear-gradient(180deg, rgba(94,234,212,0.05), transparent); }
+.bidirect__col--reverse { border-color: rgba(240, 187, 75, 0.22); background: linear-gradient(180deg, rgba(240,187,75,0.05), transparent); }
+.bidirect__label {
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.bidirect__col--forward .bidirect__label { color: var(--accent-cyan); }
+.bidirect__col--reverse .bidirect__label { color: var(--accent-gold); }
+.bidirect__claim {
+  font-family: var(--serif); font-style: italic; font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.35; color: var(--text-muted);
+}
+.bidirect__verdict {
+  font-family: var(--serif); font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 600; line-height: 1.25; color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.bidirect__verdict strong { color: var(--accent-red); font-weight: 700; }
+.bidirect__body { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.55; }
+.bidirect__body strong { color: var(--text-primary); font-weight: 600; }
+
+/* Fusion chain visualizer (slide 2) */
+.fusion-chain {
+  display: grid; grid-template-columns: repeat(5, 1fr) auto repeat(1, 1fr); gap: 0.7rem;
+  align-items: center; margin-top: 0.5rem;
+}
+.fusion-step {
+  padding: 1rem 0.6rem; text-align: center;
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: 6px;
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-secondary); line-height: 1.3;
+}
+.fusion-step--end { border-color: var(--accent-red); background: rgba(226, 58, 58, 0.08); color: var(--accent-red); }
+.fusion-arrow { font-family: var(--mono); color: var(--text-muted); text-align: center; }
+
+/* Composite-lie callout */
+.lie-callout {
+  margin-top: 0.8rem; padding: 1.4rem 1.6rem;
+  border-left: 3px solid var(--accent-red);
+  background: linear-gradient(90deg, rgba(226,58,58,0.07), transparent 70%);
+  border-radius: 0 6px 6px 0;
+}
+.lie-callout__quote {
+  font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.35; color: var(--text-primary);
+}
+.lie-callout__attr {
+  display: block; margin-top: 0.6rem;
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent-red);
+}
+
+/* Spectrum bar (slide 7) */
+.spectrum {
+  display: grid; gap: 0.8rem; margin-top: 0.4rem;
+}
+.spectrum__bar {
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; height: 32px;
+  border-radius: 6px; overflow: hidden; border: 1px solid var(--line-strong);
+}
+.spectrum__seg {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--bg-base); font-weight: 700;
+}
+.spectrum__seg--try { background: rgba(94, 234, 212, 0.5); }
+.spectrum__seg--reg { background: rgba(240, 187, 75, 0.55); }
+.spectrum__seg--mild { background: rgba(240, 187, 75, 0.75); }
+.spectrum__seg--severe { background: rgba(226, 58, 58, 0.7); }
+.spectrum__labels {
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.5rem;
+  font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted);
+  letter-spacing: 0.1em; text-transform: uppercase; text-align: center;
+}
+
+/* Scripture grid */
+.scripture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5vw; margin-top: 1rem; }
+.scripture { border-left: 2px solid var(--accent-gold); padding: 0.4rem 0 0.4rem 1.4rem; }
+.scripture__verse { font-family: var(--serif); font-style: italic; font-size: clamp(0.95rem, 1.3vw, 1.15rem); line-height: 1.55; color: var(--text-secondary); }
+.scripture__verse strong { color: var(--text-primary); }
+.scripture__ref { display: block; margin-top: 0.7rem; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-gold); }
+
+/* Mirror */
+.mirror { display: grid; gap: 0.4rem; margin-top: 0.5rem; }
+.mirror__item { display: grid; grid-template-columns: 56px 1fr auto; gap: 1.5rem; align-items: center; padding: 0.95rem 0; border-bottom: 1px solid var(--line); }
+.mirror__item:last-child { border-bottom: 0; }
+.mirror__num { font-family: var(--mono); font-size: 0.78rem; color: var(--accent-red); letter-spacing: 0.2em; font-weight: 600; }
+.mirror__q { font-family: var(--serif); font-style: italic; font-size: clamp(1rem, 1.55vw, 1.3rem); line-height: 1.3; color: var(--text-primary); letter-spacing: -0.005em; }
+.mirror__q strong { color: var(--accent-gold); font-style: normal; font-weight: 600; }
+.mirror__ref { font-family: var(--mono); font-size: 0.66rem; color: var(--accent-gold); letter-spacing: 0.18em; text-transform: uppercase; text-align: right; white-space: nowrap; }
+
+/* Sources footer */
+.sources {
+  position: absolute; bottom: 5.5rem; left: 8vw; right: 8vw;
+  font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted);
+  letter-spacing: 0.08em; opacity: 0.7; max-width: 100%;
+}
+.sources strong { color: var(--text-secondary); font-weight: 400; }
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 1.4rem; padding: 0.9rem 1.1rem;
+  border: 1px solid var(--line); border-radius: 6px;
+  background: rgba(15, 15, 23, 0.5);
+  font-family: var(--mono); font-size: 0.62rem; line-height: 1.55;
+  color: var(--text-muted); letter-spacing: 0.04em; max-width: 100%;
+}
+.disclaimer::before { content: 'NOTICE · '; color: var(--accent-gold); font-weight: 600; letter-spacing: 0.18em; }
+
+/* CTA dawn close */
+.cta { text-align: left; display: grid; gap: 2rem; }
+.cta__actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; }
+.cta__action { padding: 1.4rem 1.2rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg-card); display: grid; gap: 0.5rem; position: relative; transition: transform 250ms ease, border-color 250ms ease; }
+.cta__action:hover { transform: translateY(-3px); border-color: var(--accent-gold); }
+.cta__action__num { font-family: var(--mono); font-size: 0.72rem; color: var(--accent-gold); letter-spacing: 0.2em; }
+.cta__action__verb { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
+.cta__action__desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
+.cta__closing { margin-top: 1rem; padding: 1.6rem 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.cta__closing-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: var(--text-secondary); max-width: 50ch; line-height: 1.4; }
+.cta__sign { font-family: var(--mono); font-size: 0.78rem; color: var(--accent-gold); letter-spacing: 0.22em; text-transform: uppercase; text-align: right; }
+
+/* Slide 13 — dawn close */
+.slide--dawn::before {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 55vh;
+  background:
+    radial-gradient(ellipse 90% 100% at 50% 100%, rgba(240,187,75,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 70% at 50% 100%, rgba(192,132,252,0.09) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+.slide--dawn::after {
+  content: ''; position: absolute; left: 12%; right: 12%; bottom: 4.5rem; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(240,187,75,0.45) 28%, rgba(192,132,252,0.55) 50%, rgba(240,187,75,0.45) 72%, transparent 100%);
+  pointer-events: none;
+}
+.slide--dawn .slide__inner { position: relative; z-index: 1; }
+.slide--dawn .cta__sign { color: var(--accent-purple); }
+.slide--dawn .cta__action__num { color: var(--accent-purple); }
+.slide--dawn .cta__action:hover { border-color: var(--accent-purple); }
+.slide--dawn h2.subhead em { color: var(--accent-purple); }
+
+/* Balance columns (slide 13) */
+.balance { display: grid; grid-template-columns: 1fr 1fr; gap: 2vw; margin-top: 0.5rem; }
+.balance__col { padding: 1.6rem; border-radius: 8px; display: grid; gap: 0.9rem; }
+.balance__col--share { background: linear-gradient(180deg, rgba(94, 234, 212, 0.05), transparent); border: 1px solid rgba(94, 234, 212, 0.2); }
+.balance__col--reject { background: linear-gradient(180deg, rgba(226, 58, 58, 0.05), transparent); border: 1px solid rgba(226, 58, 58, 0.25); }
+.balance__head { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; }
+.balance__col--share .balance__head { color: var(--accent-cyan); }
+.balance__col--reject .balance__head { color: var(--accent-red); }
+.balance__title { font-family: var(--serif); font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 600; line-height: 1.2; }
+.balance__body { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; }
+.balance__body strong { color: var(--text-primary); font-weight: 600; }
+
+/* Stat grid */
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.4rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.stat { display: grid; gap: 0.4rem; }
+.stat__num { font-family: var(--mono); font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 600; color: var(--accent-gold); letter-spacing: -0.01em; }
+.stat__label { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; }
+
+/* Big number for stats */
+.bignum { font-family: var(--serif); font-size: clamp(4rem, 12vw, 9rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; background: linear-gradient(180deg, #fff 0%, #c4c1b8 50%, var(--accent-red) 120%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+.bignum-row { display: flex; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
+.bignum-caption { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: clamp(1.1rem, 2vw, 1.6rem); color: var(--text-secondary); max-width: 26ch; line-height: 1.3; }
+
+/* Tokhang flow */
+.tokhang-flow { display: grid; gap: 0.5rem; margin-top: 0.5rem; }
+.tokhang-step { display: grid; grid-template-columns: 36px 1fr; gap: 1rem; align-items: center; padding: 0.85rem 1.1rem; background: var(--bg-card); border: 1px solid var(--line); border-radius: 6px; }
+.tokhang-step__num { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; color: var(--accent-red); letter-spacing: 0.15em; }
+.tokhang-step__text { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.4; }
+.tokhang-step__text strong { color: var(--text-primary); }
+.tokhang-step--end { border-color: rgba(226, 58, 58, 0.4); background: rgba(226, 58, 58, 0.06); }
+.tokhang-step--end .tokhang-step__text { color: var(--accent-red); }
+
+/* Quote-overlay engine (slides 2, 3, 4, 5, 8, 9) */
+.quote-overlay { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.slide--quotes .slide__inner { position: relative; z-index: 2; }
+.quote-ghost {
+  position: absolute;
+  font-family: var(--serif); font-style: italic; color: var(--accent-red);
+  opacity: 0; animation: quote-fade 9s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  pointer-events: none; text-shadow: 0 0 18px rgba(226, 58, 58, 0.32);
+  max-width: 320px;
+}
+.quote-ghost__text { display: block; font-size: 0.95rem; font-weight: 500; letter-spacing: -0.005em; line-height: 1.3; }
+.quote-ghost__attr {
+  display: block; font-size: 0.58rem; font-family: var(--mono); font-style: normal;
+  letter-spacing: 0.18em; color: var(--text-muted); margin-top: 4px;
+  text-transform: uppercase;
+}
+@keyframes quote-fade {
+  0%   { opacity: 0; transform: translateY(14px); filter: blur(3px); }
+  16%  { opacity: 0.36; transform: translateY(0); filter: blur(0); }
+  78%  { opacity: 0.3; transform: translateY(-6px); filter: blur(0); }
+  100% { opacity: 0; transform: translateY(-16px); filter: blur(3px); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .slide { padding: 7vh 5vw 5vh; }
+  body.mode-deck .slide { padding: 4vh 5vw; }
+  .bidirect, .scripture-grid, .balance, .stat-row { grid-template-columns: 1fr; gap: 1.2rem; }
+  .fusion-chain { grid-template-columns: 1fr; }
+  .fusion-arrow { display: none; }
+  .cta__actions { grid-template-columns: 1fr 1fr; }
+  .mirror__item { grid-template-columns: 40px 1fr; }
+  .mirror__ref { grid-column: 2; text-align: left; margin-top: 0.3rem; }
+  body.mode-deck .hint { display: none; }
+  .sources { position: static; margin-top: 1.5rem; }
+  body.mode-deck .sources { position: absolute; bottom: 5.5rem; }
+}
+@media (max-width: 600px) {
+  .slide { padding: 6.5vh 4.5vw 4vh; }
+  .cta__actions { grid-template-columns: 1fr; }
+  .view-toggle { top: 0.5rem; }
+  .view-toggle__btn { padding: 0.45rem 0.85rem; font-size: 0.6rem; letter-spacing: 0.18em; }
+  .cross-link { top: 0.55rem; right: 0.6rem; font-size: 0.55rem; padding: 0.35rem 0.6rem; }
+  h1.headline { font-size: clamp(2rem, 9vw, 3.4rem); }
+  h2.subhead { font-size: clamp(1.4rem, 6vw, 2.1rem); }
+  p.lede { font-size: clamp(1rem, 4.2vw, 1.3rem); }
+  .quote-ghost { max-width: 78vw; }
+  .quote-ghost__text { font-size: 0.85rem; }
+  .nav__btn { width: 38px; height: 38px; }
+  .nav { padding: 1rem 4vw; }
+  .nav__dots { padding: 0 0.7rem; gap: 4px; max-width: 60vw; }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .slide { min-height: auto; padding: 5.5vh 4vw 4vh; }
+  body.mode-deck .slide { min-height: 0; }
+  .bignum { font-size: clamp(3.6rem, 18vw, 7rem); }
+  .stat__num { font-size: 1.25rem; }
+  .cta__closing { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .cta__sign { text-align: left; }
+  h1.headline { line-height: 1.05; }
+  .sources { font-size: 0.6rem; line-height: 1.45; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .slide { min-height: 100vh; padding: 4vh 5vw; }
+  body.mode-deck .slide { padding: 3vh 5vw; }
+  h1.headline { font-size: clamp(1.8rem, 6vw, 3.2rem); }
+  h2.subhead { font-size: clamp(1.3rem, 4.5vw, 2rem); }
+}
+</style>
+</head>
+<body>
+
+<div class="view-toggle" id="viewToggle" role="group" aria-label="View mode">
+  <button class="view-toggle__btn" data-mode="scroll" aria-pressed="true" type="button">Scroll</button>
+  <button class="view-toggle__btn" data-mode="deck" aria-pressed="false" type="button">Slides</button>
+</div>
+
+<a class="cross-link" href="../index.html" title="Read the first reckoning">← First reckoning</a>
+
+<div class="progress"><div class="progress__fill" id="progressFill"></div></div>
+
+<div class="hint">
+  Navigate&nbsp; <kbd>←</kbd><kbd>→</kbd>&nbsp; or&nbsp; <kbd>Space</kbd>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- ============ SLIDE 1 — Cover ============ -->
+  <section class="slide active" data-slide="1">
+    <div class="slide__inner">
+      <div class="eyebrow reveal">A Filipino reckoning · the folly · 2026</div>
+      <h1 class="headline reveal">
+        The folly of<br/>
+        the drug war.<br/>
+        <em>What actually makes a rapist, a killer, a thief &mdash; and what doesn't.</em>
+      </h1>
+      <p class="lede reveal">
+        Thirteen slides on the composite lie that justified Duterte's drug war &mdash; the
+        rhetoric that drug addicts are rapists, killers, and thieves who deserve to die. The
+        folly of believing it. The cost of acting on it: ~30,000 mostly-poor Filipinos dead.
+        For the brothers, sisters, and pastors who heard <em>"drug addict"</em> and pictured
+        the worst.
+      </p>
+      <p class="body reveal" style="color: var(--text-muted); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 1.2rem;">
+        High-quality sources only · NIDA · WHO · CDC · BJS · OJP · HRW · Amnesty · ICC · peer-reviewed journals
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 2 — The Composite Lie ============ -->
+  <section class="slide slide--quotes" data-slide="2">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">The folly began here</div>
+      <h2 class="subhead reveal">
+        The composite lie that opened the door to the killings.<br/>
+        <em>"Drug addict" became "rapist, killer, thief, deserves death" &mdash; in one breath.</em>
+      </h2>
+
+      <div class="fusion-chain reveal">
+        <div class="fusion-step">Drug addict</div>
+        <div class="fusion-arrow">→</div>
+        <div class="fusion-step">Rapist</div>
+        <div class="fusion-arrow">→</div>
+        <div class="fusion-step">Killer · thief</div>
+        <div class="fusion-arrow">→</div>
+        <div class="fusion-step fusion-step--end">Deserves death</div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.8rem;">
+        Each step in that chain is empirically wrong &mdash; yet the chain was emotionally seamless.
+        And notice the implicit class qualifier: it was always the <strong>poor</strong> addict who
+        <em>"will rape your daughter,"</em> never the rich one. The wealthy addict goes to private rehab.
+        The poor addict gets a bullet in an alley.
+      </p>
+
+      <div class="lie-callout reveal">
+        <span class="lie-callout__quote">
+          "Hitler massacred 3 million Jews. Now there is 3 million, what is it, 3 million
+          drug addicts (in the Philippines)&hellip; I'd be happy to slaughter them."
+        </span>
+        <span class="lie-callout__attr">&mdash; Rodrigo Duterte, Davao, Sept 30, 2016 · per Inquirer, CNN, Bloomberg, Al Jazeera, PBS</span>
+      </div>
+
+      <div class="sources">
+        SOURCES · <strong>Inquirer</strong> (full text + video); <strong>CNN</strong>; <strong>Bloomberg</strong>; <strong>Al Jazeera</strong>; <strong>PBS NewsHour</strong> (Sept 30, 2016)
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 3 — Drug user ≠ Rapist ============ -->
+  <section class="slide slide--quotes" data-slide="3">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">Folly #1 · the rape justification</div>
+      <h2 class="subhead reveal">
+        Drug user ≠ rapist.<br/>
+        <em>Wrong in both directions &mdash; and the war was built on it.</em>
+      </h2>
+
+      <div class="bidirect">
+        <div class="bidirect__col bidirect__col--forward reveal">
+          <div class="bidirect__label">→ Forward direction</div>
+          <div class="bidirect__claim">"If they take drugs, they will rape."</div>
+          <div class="bidirect__verdict">Most drug users <strong>never commit sexual violence</strong>.</div>
+          <div class="bidirect__body">
+            Hundreds of millions use drugs globally; the rape-perpetration subset is tiny. The
+            personality, attitudes, and past experiences of perpetrators who drink during assault
+            are <strong>the same as</strong> those who don't drink (Abbey et al., PMC peer-reviewed
+            review). Substance use can <em>disinhibit</em>; it does not <em>create</em> a rapist
+            disposition.
+          </div>
+        </div>
+        <div class="bidirect__col bidirect__col--reverse reveal">
+          <div class="bidirect__label">← Reverse direction</div>
+          <div class="bidirect__claim">"Rapists are mostly drug-dependent addicts."</div>
+          <div class="bidirect__verdict">Most rapists are <strong>not drug-dependent</strong>.</div>
+          <div class="bidirect__body">
+            Rape is driven by <strong>anger, power, and control</strong> &mdash; not sexual desire
+            (Groth typology, OJP/DOJ-cited). Most rapes are <strong>planned</strong>, not impulsive.
+            Roughly <strong>~70 %</strong> are committed by someone the victim already knows &mdash;
+            acquaintance, partner, ex-partner (RAINN, US data).
+          </div>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        Drugs are an easy story. The actual story is older, more uncomfortable, and lives in
+        how a person was shaped before any substance entered the picture.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>OJP/DOJ</strong> Groth typology (PubMed 910975); <strong>RAINN</strong> perpetrator-victim data; <strong>PMC 3177166</strong> Abbey et al., <em>Alcohol's Role in Sexual Violence Perpetration</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 4 — Drug user ≠ Killer ============ -->
+  <section class="slide slide--quotes" data-slide="4">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">Folly #2 · the "shoot them dead" justification</div>
+      <h2 class="subhead reveal">
+        Drug user ≠ killer.<br/>
+        <em>Only 3.9 % of US homicides are narcotics-related &mdash; yet we shot tens of thousands here.</em>
+      </h2>
+
+      <div class="bidirect">
+        <div class="bidirect__col bidirect__col--forward reveal">
+          <div class="bidirect__label">→ Forward direction</div>
+          <div class="bidirect__claim">"Addicts become violent &mdash; they will kill you."</div>
+          <div class="bidirect__verdict">Most drug users are <strong>non-violent</strong>.</div>
+          <div class="bidirect__body">
+            The drug-crime meta-analysis (odds of any offending 2.8&ndash;3.8&times; for users vs.
+            non-users) covers <em>all</em> crime categories &mdash; the violent-crime subset is
+            much smaller. WHO load-bearing risk factors for interpersonal violence: harmful
+            masculinity norms, witnessing family violence, weapon availability. <strong>Not pharmacology.</strong>
+          </div>
+        </div>
+        <div class="bidirect__col bidirect__col--reverse reveal">
+          <div class="bidirect__label">← Reverse direction</div>
+          <div class="bidirect__claim">"Murderers are mostly drug-crazed addicts."</div>
+          <div class="bidirect__verdict">Most homicide perpetrators are <strong>not drug-dependent</strong>.</div>
+          <div class="bidirect__body">
+            Per <strong>BJS / FBI UCR (2007)</strong>: only <strong>3.9 %</strong> of US homicides
+            with known circumstances were narcotics-related. Per <strong>BJS 2004 Survey of
+            Inmates</strong>: violent offenders were only <strong>10 %</strong> likely to have
+            committed the crime for drug money (vs. 30 % property, 26 % drug). Most "drug-related"
+            violence is <strong>systemic</strong> &mdash; drug-market turf disputes (Goldstein 1985,
+            OJP) &mdash; not the cartoon addict who snapped.
+          </div>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        Homicide is overwhelmingly driven by interpersonal disputes, intimate-partner violence,
+        and gang/economic conflict &mdash; not by what someone smoked yesterday.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>BJS</strong> <em>Drug-Related Crime</em> &amp; <em>Drugs &amp; Crime Facts</em>; <strong>OJP</strong> Goldstein 1985 tripartite framework; <strong>WHO</strong> Violence Against Women fact sheet
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 5 — Drug user ≠ Thief (the nuanced case) ============ -->
+  <section class="slide slide--quotes" data-slide="5">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">Folly #3 · the "thief" justification</div>
+      <h2 class="subhead reveal">
+        Drug user ≠ thief &mdash; and where the link is real, it points to treatment, not bullets.<br/>
+        <em>The folly was answering theft with murder.</em>
+      </h2>
+
+      <div class="bidirect">
+        <div class="bidirect__col bidirect__col--forward reveal">
+          <div class="bidirect__label">→ Forward direction</div>
+          <div class="bidirect__claim">"Addicts will steal from you."</div>
+          <div class="bidirect__verdict">Most drug users <strong>do not commit property crime</strong>.</div>
+          <div class="bidirect__body">
+            The link concentrates in <strong>severe heroin/crack dependence</strong> under
+            poverty (Goldstein's <em>"economic-compulsive"</em> subset). Casual users, recreational
+            users, mild-SUD cases do not systematically steal. The drug is rarely the variable
+            that flips a non-thief into a thief &mdash; <em>resourcelessness</em> is.
+          </div>
+        </div>
+        <div class="bidirect__col bidirect__col--reverse reveal">
+          <div class="bidirect__label">← Reverse direction</div>
+          <div class="bidirect__claim">"Thieves are mostly drug-addicted."</div>
+          <div class="bidirect__verdict">More mixed &mdash; <strong>but still wrong</strong> as a sweeping claim.</div>
+          <div class="bidirect__body">
+            <strong>~85 %</strong> of burglary inmates report substance dependence or abuse (the
+            highest-link offense category, per BJS). <strong>But</strong> only <strong>~25 %</strong>
+            of property offenders said they committed the crime <em>for drug money</em>. And the
+            OJP <em>Professional Thieves and Drugs</em> study found criminal activity began
+            <strong>before</strong> drug use &mdash; addiction was <em>incidental</em> to their
+            criminal lifestyle.
+          </div>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        The honest answer: the substance &harr; theft link is the strongest of the three &mdash;
+        but it is conditional, narrow, and the implied solution is <strong>treatment + economic
+        safety nets</strong>. Not bullets. Never bullets.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>BJS</strong> <em>Drugs &amp; Crime Facts</em>; <strong>OJP</strong> <em>Professional Thieves and Drugs</em>; <strong>Goldstein 1985</strong> "economic-compulsive" framework
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 6 — What actually predicts these crimes ============ -->
+  <section class="slide" data-slide="6">
+    <div class="slide__inner">
+      <div class="eyebrow reveal">The folly of ignoring the actual causes</div>
+      <h2 class="subhead reveal">
+        It was never drugs. It was childhood, attachment, and how violence was modeled.<br/>
+        <em>We killed a symptom and called it a cure.</em>
+      </h2>
+
+      <div class="stat-row">
+        <div class="stat reveal">
+          <div class="stat__num">94 %</div>
+          <div class="stat__label">of sex offenders show <strong>insecure parental attachment</strong> (Jespersen et al.)</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num">76 %</div>
+          <div class="stat__label">of rapists show <strong>avoidant attachment</strong> patterns specifically</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num">78 %</div>
+          <div class="stat__label">witnessed <strong>parental violence</strong> in childhood</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num">68 %</div>
+          <div class="stat__label"><strong>physical abuse</strong> in childhood</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num">70 %</div>
+          <div class="stat__label"><strong>emotional abuse</strong> in childhood</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num">WHO</div>
+          <div class="stat__label">load-bearing factors: <strong>harmful masculinity norms · gender inequality · child maltreatment</strong></div>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        None of these factors is <em>"took drugs."</em> If we wanted to actually reduce sexual
+        violence, the evidence-based interventions would be early-childhood support, ending
+        corporal punishment, addressing masculinity norms, and family-violence prevention.
+        Killing the symptom in an alley does nothing for the cause.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>PubMed 18511118</strong> Jespersen et al., <em>Developmental experiences of child sexual abusers and rapists</em>; <strong>WHO</strong> Violence Against Women fact sheet; <strong>CDC</strong> Sexual Violence Risk &amp; Protective Factors
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 7 — Drug-use spectrum & recovery ============ -->
+  <section class="slide" data-slide="7">
+    <div class="slide__inner">
+      <div class="eyebrow reveal">The medical folly</div>
+      <h2 class="subhead reveal">
+        Use ≠ addiction. Addiction ≠ death sentence.<br/>
+        <em>The "point of no return" framing is medically false &mdash; and was the licence to give up on people.</em>
+      </h2>
+
+      <div class="spectrum reveal">
+        <div class="spectrum__bar">
+          <div class="spectrum__seg spectrum__seg--try">Tried</div>
+          <div class="spectrum__seg spectrum__seg--reg">Casual</div>
+          <div class="spectrum__seg spectrum__seg--mild">Mild SUD</div>
+          <div class="spectrum__seg spectrum__seg--severe">Severe SUD</div>
+        </div>
+        <div class="spectrum__labels">
+          <div>most never progress</div>
+          <div>most still functional</div>
+          <div>treatable</div>
+          <div>treatable, slower</div>
+        </div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat reveal">
+          <div class="stat__num">DSM-5</div>
+          <div class="stat__label">grades severity by criteria count: <strong>mild (2-3)</strong>, moderate (4-5), <strong>severe (6+)</strong> &mdash; not a binary</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num">40-60 %</div>
+          <div class="stat__label">relapse rates &mdash; <strong>same range as diabetes, asthma, hypertension</strong> (NIDA)</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__num">~29 M</div>
+          <div class="stat__label">US adults report having <strong>resolved a significant substance-use problem</strong> (Recovery Research Institute)</div>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        After <strong>5 years of sustained recovery</strong>, relapse risk drops below 15 % &mdash;
+        comparable to the general population. NIDA: addiction is a <strong>treatable chronic
+        medical condition</strong>. People recover. People rebuild. The lie that "once an
+        addict, always a threat" is not medicine. It is propaganda.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>NIDA</strong> <em>Understanding Drug Use and Addiction</em> &amp; <em>Treatment and Recovery</em>; <strong>DSM-5-TR</strong> Substance Use Disorder criteria; <strong>Recovery Research Institute</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 8 — Christian cartoon vs reality ============ -->
+  <section class="slide slide--quotes" data-slide="8">
+    <div class="slide__inner">
+      <div class="eyebrow reveal">The cartoon that fuelled the folly</div>
+      <h2 class="subhead reveal">
+        When the pulpit said <em>"drug addict,"</em> what did you picture?<br/>
+        <em>The image in your head was always class-coded &mdash; and that image did the killing before any bullet did.</em>
+      </h2>
+
+      <div class="bidirect">
+        <div class="bidirect__col bidirect__col--reverse reveal">
+          <div class="bidirect__label">The cartoon (what we pictured)</div>
+          <div class="bidirect__verdict">A shabu-crazed predator from the slum.</div>
+          <div class="bidirect__body">
+            Male. Poor. Tattooed. Unpredictable. Dangerous to your daughter. Already half a
+            criminal. Beyond help. Beyond redemption. A <em>"hopeless case"</em>. A justified
+            casualty.
+          </div>
+        </div>
+        <div class="bidirect__col bidirect__col--forward reveal">
+          <div class="bidirect__label">The actual population</div>
+          <div class="bidirect__verdict">Students. Workers. Parents. Recovering people. Mild-SUD cases.</div>
+          <div class="bidirect__body">
+            A college student who experimented once. A nurse with prescription dependence. A
+            jeepney driver self-medicating chronic pain. A teenager who tried weed. A neighbor
+            in mild SUD. Most are <strong>not violent</strong>, not impulsive, not predatory.
+            Most were <strong>never going to harm anyone</strong>.
+          </div>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        The cartoon was always already half a verdict. The image did the killing before any
+        bullet did. And the cartoon was <strong>never</strong> the businessman with a coke habit
+        or the mayor's son with a pill problem. The cartoon, by design, lived in the slum.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>NIDA</strong> population-level use vs. addiction prevalence; <strong>Philippine DDB</strong> drug-survey context
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 9 — The class war disguised as a drug war ============ -->
+  <section class="slide slide--quotes" data-slide="9">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">The targeting folly · who actually died</div>
+      <h2 class="subhead reveal">
+        <em>"If you are poor, you are killed."</em><br/>
+        &mdash; Amnesty International report title, 2017. The war on drugs was a war on the poor.
+      </h2>
+
+      <div class="bignum-row reveal">
+        <span class="bignum">~30,000</span>
+        <div class="bignum-caption">
+          drug-war deaths concentrated in <em>urban-poor barangays</em> &mdash; Caloocan, Tondo,
+          Payatas, Pasig informal settlements. Almost none in gated subdivisions.
+        </div>
+      </div>
+
+      <div class="lie-callout reveal">
+        <span class="lie-callout__quote">
+          "Oplan Tokhang had to target the poor because they have no capacity to sue."
+        </span>
+        <span class="lie-callout__attr">&mdash; Insider witness testimony, ICC pre-trial · via Rappler</span>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        Meanwhile &mdash; according to AMLC findings now confirmed in House Justice Committee
+        hearings &mdash; alleged drug lord Samuel <em>"Sammy"</em> Uy paid the Duterte family
+        <strong>₱181.6 million</strong> in checks between 2011 and 2013. He was never raided.
+        Never on a tokhang list. Wealthy addicts went to private rehab. Politicians' sons caught
+        with drugs faced lawyers, plea deals, and reputation management &mdash; not bullets in alleys.
+      </p>
+
+      <p class="body reveal" style="color: var(--accent-red); font-weight: 600; max-width: 70ch;">
+        It wasn't a war on drugs. It was a war on people who couldn't fight back.
+      </p>
+
+      <div class="disclaimer reveal">
+        Allegations cited above are drawn from public proceedings &mdash; ICC charges and warrants,
+        Senate Blue Ribbon and House Justice Committee hearings, Ombudsman filings, COA reports,
+        AMLC disclosures &mdash; and from verified press reporting (Amnesty, HRW, Rappler, Inquirer,
+        GMA News, Mindanews). Where cases remain unadjudicated, &ldquo;alleged&rdquo; is implied.
+        All persons named are presumed innocent until convicted by a court of competent jurisdiction.
+      </div>
+
+      <div class="sources">
+        SOURCES · <strong>Amnesty International</strong> <em>"If you are poor, you are killed"</em> (ASA 35/5517/2017); <strong>HRW</strong> <em>License to Kill</em> (2017); <strong>ICC</strong> pre-trial witness testimony; <strong>Rappler</strong> <em>Insider witnesses</em>; <strong>AMLC</strong> (House Justice Committee, Apr 2026)
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 10 — The folly of the comfortable Christian ============ -->
+  <section class="slide" data-slide="10">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">The folly of distance</div>
+      <h2 class="subhead reveal">
+        You were never going to be on the list.<br/>
+        <em>And that is why the killings did not break your sleep.</em>
+      </h2>
+
+      <p class="body reveal" style="max-width: 72ch;">
+        The Christians who supported &mdash; or quietly tolerated &mdash; the drug war were
+        overwhelmingly <strong>not the people being killed</strong>. The dead came from
+        informal settlements: Caloocan alleys, Tondo backlots, Payatas slopes. The pulpit
+        congregations came from gated subdivisions, condominiums, professional-class
+        suburbs. <strong>Two Philippines. One paid for the other's policy.</strong>
+      </p>
+
+      <p class="body reveal" style="max-width: 72ch;">
+        It was easy to support harsher judgment for the poor because the harsh judgment was
+        always happening to <em>other people</em>. The pulpit said <em>"drug addict"</em>
+        and the comfortable Christian heard <em>"those people in the slum"</em> &mdash; not
+        <em>"my cousin, my uncle, my neighbor."</em> The cartoon worked precisely because
+        the audience was insulated from the cost.
+      </p>
+
+      <p class="body reveal" style="max-width: 72ch; color: var(--accent-gold); font-weight: 500;">
+        If 30,000 had been killed in Forbes Park, BGC, or Ayala Heights, the drug war would
+        have been stopped in a week.
+      </p>
+
+      <div class="scripture reveal" style="margin-top: 1rem;">
+        <p class="scripture__verse">
+          "If you really keep the royal law found in Scripture, <strong>'Love your neighbor
+          as yourself,'</strong> you are doing right. But if you show favoritism, you sin
+          and are convicted by the law as lawbreakers. &hellip; <strong>You have insulted
+          the poor.</strong> Is it not the rich who are exploiting you?"
+        </p>
+        <span class="scripture__ref">James 2:8&ndash;9, 6 (NIV)</span>
+      </div>
+
+      <p class="body reveal" style="max-width: 72ch;">
+        Christian elitism does not look like cruelty. It looks like <strong>distance</strong>.
+        Like quiet relief that the trouble is in someone else's barangay. Like a sermon
+        that names <em>"the drug problem"</em> without ever naming a person who might
+        still be alive. That distance is the folly. That distance was the political
+        condition for the killings.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>Amnesty International</strong> ASA 35/5517/2017; <strong>HRW</strong>; <strong>Rappler</strong> mapping of EJK incidents by barangay socio-economic status; <strong>James 2:1&ndash;9</strong> (NIV); cf. <strong>Proverbs 14:31</strong>, <strong>Amos 5:11&ndash;12</strong>, <strong>Luke 4:18</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 11 — How tokhang lists were actually made ============ -->
+  <section class="slide" data-slide="11">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">The procedural folly · how the lists were made</div>
+      <h2 class="subhead reveal">
+        How a name landed on a tokhang list.<br/>
+        <em>No DSM-5. No clinician. No lawyer. No right of appeal. And in thousands of cases &mdash; no trial.</em>
+      </h2>
+
+      <div class="tokhang-flow">
+        <div class="tokhang-step reveal">
+          <div class="tokhang-step__num">01</div>
+          <div class="tokhang-step__text">
+            <strong>Barangay captain</strong> submits a list of suspected "drug personalities" in their area
+          </div>
+        </div>
+        <div class="tokhang-step reveal">
+          <div class="tokhang-step__num">02</div>
+          <div class="tokhang-step__text">
+            <strong>BADAC</strong> (Barangay Anti-Drug Abuse Council) curates &mdash; often relying on
+            community gossip, neighborhood grievances, political enemies
+          </div>
+        </div>
+        <div class="tokhang-step reveal">
+          <div class="tokhang-step__num">03</div>
+          <div class="tokhang-step__text">
+            <strong>Anonymous drop boxes</strong> in barangay halls &mdash; residents could drop names with no verification
+          </div>
+        </div>
+        <div class="tokhang-step reveal">
+          <div class="tokhang-step__num">04</div>
+          <div class="tokhang-step__text">
+            <strong>Police "validation"</strong> &mdash; intelligence units check the list. <em>No medical
+            assessment. No DSM-5 criteria. No clinical professional involved.</em>
+          </div>
+        </div>
+        <div class="tokhang-step reveal">
+          <div class="tokhang-step__num">05</div>
+          <div class="tokhang-step__text">
+            Validation chain: chief of police → provincial director → regional director → Directorate for Intelligence
+          </div>
+        </div>
+        <div class="tokhang-step tokhang-step--end reveal">
+          <div class="tokhang-step__num">06</div>
+          <div class="tokhang-step__text">
+            <strong>"Knock and plead"</strong> visit &mdash; or in thousands of cases, the bullet
+          </div>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.6rem;">
+        By design, this methodology <strong>guaranteed</strong> the poor would be over-represented
+        and the wealthy invisible. A barangay captain in Forbes Park doesn't make a list of his
+        neighbors. A maid in Tondo gets her brother named because of a quarrel over a fence.
+      </p>
+
+      <div class="sources">
+        SOURCES · <strong>HRW</strong> <em>License to Kill</em>; <strong>Amnesty</strong> ASA 35/5517/2017; <strong>ICC</strong> pre-trial findings; PH Dangerous Drugs Board protocols
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 12 — Scripture on innocent blood ============ -->
+  <section class="slide" data-slide="12">
+    <div class="slide__inner">
+      <div class="eyebrow reveal">The Bible the deceivers didn't quote</div>
+      <h2 class="subhead reveal">
+        Every page of Scripture rebuked the folly &mdash; we just weren't reading.<br/>
+        <em>Innocent blood. Two witnesses. False charges. Millstones.</em>
+      </h2>
+
+      <div class="scripture-grid">
+        <div class="scripture reveal">
+          <p class="scripture__verse">
+            "Have nothing to do with a <strong>false charge</strong>, and do not put an
+            <strong>innocent or honest person to death</strong>, for I will not acquit the guilty."
+          </p>
+          <span class="scripture__ref">Exodus 23:7 (NIV)</span>
+        </div>
+        <div class="scripture reveal">
+          <p class="scripture__verse">
+            "One witness is not enough to convict anyone accused of any crime or offense.
+            A matter must be established by the <strong>testimony of two or three witnesses</strong>."
+          </p>
+          <span class="scripture__ref">Deuteronomy 19:15 (NIV)</span>
+        </div>
+        <div class="scripture reveal">
+          <p class="scripture__verse">
+            "There are six things the Lord hates&hellip; <strong>hands that shed innocent blood</strong>,
+            a heart that devises wicked schemes, feet that are quick to rush into evil."
+          </p>
+          <span class="scripture__ref">Proverbs 6:16&ndash;18</span>
+        </div>
+        <div class="scripture reveal">
+          <p class="scripture__verse">
+            "Whoever causes one of these little ones to stumble &mdash; it would be better for him
+            if a great <strong>millstone</strong> were hung around his neck and he were thrown
+            into the sea."
+          </p>
+          <span class="scripture__ref">Mark 9:42</span>
+        </div>
+      </div>
+
+      <p class="body reveal" style="margin-top: 0.8rem;">
+        The tokhang list <em>was</em> the false charge. The drop-box tip <em>was</em> the single
+        unverified witness. The bullet in the alley <em>was</em> the hand shedding innocent
+        blood. There is no way to read these verses and bless what was done.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 13 — Christian mirror ============ -->
+  <section class="slide" data-slide="13">
+    <div class="slide__inner">
+      <div class="eyebrow eyebrow--red reveal">For my brother and sister in Christ</div>
+      <h2 class="subhead reveal">
+        Six questions for the mirror.<br/>
+        <em>The folly cannot end while we refuse to look at ourselves.</em>
+      </h2>
+
+      <div class="mirror">
+        <div class="mirror__item reveal">
+          <div class="mirror__num">01</div>
+          <div class="mirror__q">
+            When the pulpit said <strong>"drug addict,"</strong> did I picture the shabu-crazed
+            predator from the slum &mdash; or a real human being I have ever actually known?
+          </div>
+          <div class="mirror__ref">Matthew 25:40</div>
+        </div>
+        <div class="mirror__item reveal">
+          <div class="mirror__num">02</div>
+          <div class="mirror__q">
+            Did I assume a tokhang list was a <strong>clinical diagnosis</strong> &mdash; rather
+            than barangay hearsay collected in a drop box?
+          </div>
+          <div class="mirror__ref">Deut 19:15</div>
+        </div>
+        <div class="mirror__item reveal">
+          <div class="mirror__num">03</div>
+          <div class="mirror__q">
+            Did I conflate <strong>"addict"</strong> with <strong>"rapist," "killer," or "thief"</strong>
+            because a politician's rhetoric did &mdash; and not because the evidence does?
+          </div>
+          <div class="mirror__ref">Proverbs 18:17</div>
+        </div>
+        <div class="mirror__item reveal">
+          <div class="mirror__num">04</div>
+          <div class="mirror__q">
+            Did my silence cost me nothing because the killings were happening in
+            <strong>someone else's barangay</strong> &mdash; never mine, never my children's?
+            Was that not the very <strong>favoritism</strong> James warned against?
+          </div>
+          <div class="mirror__ref">James 2:1&ndash;9</div>
+        </div>
+        <div class="mirror__item reveal">
+          <div class="mirror__num">05</div>
+          <div class="mirror__q">
+            Would I want my own <strong>struggling cousin or uncle</strong> on such a list &mdash;
+            with no diagnosis, no lawyer, no right of appeal?
+          </div>
+          <div class="mirror__ref">Matthew 7:12</div>
+        </div>
+        <div class="mirror__item reveal">
+          <div class="mirror__num">06</div>
+          <div class="mirror__q">
+            When the next "drug suspect" is shot, <strong>will my voice be there</strong> &mdash;
+            or will I have already spent it defending the killers?
+          </div>
+          <div class="mirror__ref">Proverbs 31:8&ndash;9</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 14 — Forbearance ≠ Impunity (dawn close) ============ -->
+  <section class="slide slide--dawn" data-slide="14">
+    <div class="slide__inner">
+      <div class="eyebrow reveal">The resolution · naming the folly, refusing the impunity</div>
+      <h2 class="subhead reveal">
+        We can share the lament on both sides.<br/>
+        <em>We cannot share the impunity. We cannot bless the folly.</em>
+      </h2>
+
+      <div class="balance">
+        <div class="balance__col balance__col--share reveal">
+          <div class="balance__head">What we share</div>
+          <div class="balance__title">Grief for every innocent life.</div>
+          <p class="balance__body">
+            The family abused by addiction is innocent. The child harmed by a strung-out neighbor
+            is innocent. The community traumatized by a meth house is innocent. <strong>Their
+            grief is real. Their cry for safety is righteous.</strong>
+          </p>
+          <p class="balance__body">
+            We are not minimizing their pain. <strong>Solving the drug problem and refusing
+            extrajudicial killings are not opposites.</strong> Demanding justice for EJK victims
+            does not mean abandoning communities to addiction. Both can be true. Both must be.
+          </p>
+        </div>
+        <div class="balance__col balance__col--reject reveal">
+          <div class="balance__head">What we refuse</div>
+          <div class="balance__title">Forbearance for state-sanctioned murder.</div>
+          <p class="balance__body">
+            You cannot extend "forbearance" to <strong>theft and killing dressed up as policy</strong>.
+            That is not reconciliation &mdash; that is collaboration. The Bible asks forbearance
+            between equals in disagreement; it never asks it of the powerful crushing the powerless.
+          </p>
+          <p class="balance__body">
+            We cannot wait for this violence to reach our own families before we wake up.
+            <strong>Impunity is the actual enemy here</strong> &mdash; the power to kill, steal, and
+            walk away unaccountable. <em>That is what we are fighting, not addicts in slums.</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="cta__actions">
+        <div class="cta__action reveal">
+          <div class="cta__action__num">01</div>
+          <div class="cta__action__verb">Re-learn</div>
+          <div class="cta__action__desc">The drug spectrum. The real risk factors for rape. The class architecture of who was killed.</div>
+        </div>
+        <div class="cta__action reveal">
+          <div class="cta__action__num">02</div>
+          <div class="cta__action__verb">Re-look</div>
+          <div class="cta__action__desc">At the tokhang list mechanics. At the AMLC findings. At who was always missing from the lists.</div>
+        </div>
+        <div class="cta__action reveal">
+          <div class="cta__action__num">03</div>
+          <div class="cta__action__verb">Refuse</div>
+          <div class="cta__action__desc">The composite lie. The cartoon. The "they-deserved-it" shrug. The silence in your group chats.</div>
+        </div>
+        <div class="cta__action reveal">
+          <div class="cta__action__num">04</div>
+          <div class="cta__action__verb">Repair</div>
+          <div class="cta__action__desc">Support EJK families. Support evidence-based drug policy. Speak the truth in your church.</div>
+        </div>
+      </div>
+
+      <div class="cta__closing reveal">
+        <div class="cta__closing-quote">
+          "Solving the drug problem and refusing extrajudicial killings are not opposites.
+          Both can be true. Both must be."
+        </div>
+        <div class="cta__sign">
+          The truth<br/>
+          is still<br/>
+          calling.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <div class="nav__counter"><strong id="counterCurrent">01</strong>&nbsp;/&nbsp;<span id="counterTotal">14</span></div>
+  <div class="nav__controls">
+    <button class="nav__btn" id="prevBtn" aria-label="Previous slide">←</button>
+    <div class="nav__dots" id="navDots"></div>
+    <button class="nav__btn" id="nextBtn" aria-label="Next slide">→</button>
+  </div>
+  <div class="nav__counter" style="opacity: 0;">&nbsp;</div>
+</div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  let isAnimating = false;
+
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsEl = document.getElementById('navDots');
+  const counterCurrent = document.getElementById('counterCurrent');
+  const counterTotal = document.getElementById('counterTotal');
+  const progressFill = document.getElementById('progressFill');
+
+  counterTotal.textContent = String(total).padStart(2, '0');
+
+  // === Quote ghost overlay (slides marked .slide--quotes) ===
+  const quotes = [
+    { text: '"Hitler massacred 3 million Jews. Now there is 3 million drug addicts… I\'d be happy to slaughter them."', attr: 'Duterte · Davao · Sep 30, 2016 · Inquirer/CNN/Bloomberg/AJ/PBS' },
+    { text: '"If they are stubborn, then we will kill them."', attr: 'Duterte · PBS Frontline' },
+    { text: '"Forget the laws on human rights."', attr: 'Duterte · campaign rally · 2016' },
+    { text: '"Shoot them dead."', attr: 'Duterte to police · multiple speeches' },
+    { text: '"If you destroy my country, I will kill you."', attr: 'Duterte · inaugural-period speeches' },
+    { text: '"Tokhang is here to stay."', attr: 'Bato dela Rosa · PNP chief, 2017' },
+    { text: '"I don\'t care about human rights, believe me."', attr: 'Duterte · 2016' },
+    { text: '"My order is, shoot to kill you. I don\'t care about human rights."', attr: 'Duterte · campaign · 2016' },
+    { text: '"Do your duty, and in the process you kill 1,000 persons, I will protect you."', attr: 'Duterte to police · 2016' }
+  ];
+  let quoteTimer = null;
+  let quoteInterval = null;
+  let quoteIndex = 0;
+
+  function spawnQuote(overlay) {
+    const slide = overlay.parentElement;
+    // Try to avoid card/text regions
+    const cards = slide.querySelectorAll('.bidirect__col, .lie-callout, .tokhang-step, .scripture, .balance__col, .cta__action, .mirror__item, .stat, .spectrum, .fusion-step, .disclaimer');
+    const slideRect = slide.getBoundingClientRect();
+    const zones = Array.from(cards).map(c => {
+      const r = c.getBoundingClientRect();
+      return {
+        left:   ((r.left   - slideRect.left) / slideRect.width)  * 100 - 1,
+        right:  ((r.right  - slideRect.left) / slideRect.width)  * 100 + 1,
+        top:    ((r.top    - slideRect.top)  / slideRect.height) * 100 - 1,
+        bottom: ((r.bottom - slideRect.top)  / slideRect.height) * 100 + 1
+      };
+    });
+    let x = 0, y = 0, found = false;
+    for (let attempt = 0; attempt < 30; attempt++) {
+      x = 2 + Math.random() * 70;
+      y = 4 + Math.random() * 86;
+      const inCard = zones.some(z => x >= z.left && x <= z.right && y >= z.top && y <= z.bottom);
+      if (!inCard) { found = true; break; }
+    }
+    if (!found) return;
+
+    const q = quotes[quoteIndex++ % quotes.length];
+    const el = document.createElement('div');
+    el.className = 'quote-ghost';
+    const t = document.createElement('span');
+    t.className = 'quote-ghost__text';
+    t.textContent = q.text;
+    const a = document.createElement('span');
+    a.className = 'quote-ghost__attr';
+    a.textContent = q.attr;
+    el.appendChild(t);
+    el.appendChild(a);
+    el.style.left = x + '%';
+    el.style.top = y + '%';
+    overlay.appendChild(el);
+    setTimeout(() => { if (el.parentNode) el.remove(); }, 9600);
+  }
+
+  function startQuotes(slideEl) {
+    clearQuotes(slideEl);
+    quoteTimer = setTimeout(() => {
+      let overlay = slideEl.querySelector('.quote-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'quote-overlay';
+        slideEl.insertBefore(overlay, slideEl.firstChild);
+      }
+      spawnQuote(overlay);
+      const tick = () => {
+        spawnQuote(overlay);
+        quoteInterval = setTimeout(tick, 1200 + Math.random() * 800);
+      };
+      quoteInterval = setTimeout(tick, 1100);
+    }, 2500);
+  }
+  function clearQuotes(slideEl) {
+    if (quoteTimer) { clearTimeout(quoteTimer); quoteTimer = null; }
+    if (quoteInterval) { clearTimeout(quoteInterval); quoteInterval = null; }
+    const overlay = slideEl.querySelector('.quote-overlay');
+    if (overlay) overlay.remove();
+    quoteIndex = 0;
+  }
+
+  // === Dots ===
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'nav__dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => go(i));
+    dotsEl.appendChild(dot);
+  }
+  const dots = dotsEl.querySelectorAll('.nav__dot');
+
+  function go(index) {
+    if (!document.body.classList.contains('mode-deck')) {
+      if (index < 0 || index >= total) return;
+      const target = slides[index];
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (isAnimating) return;
+    if (index < 0 || index >= total || index === current) return;
+    isAnimating = true;
+    const prev = slides[current];
+    const next = slides[index];
+    if (prev.classList.contains('slide--quotes')) clearQuotes(prev);
+    prev.classList.add('exiting');
+    prev.classList.remove('active');
+    setTimeout(() => {
+      prev.classList.remove('exiting');
+      next.classList.add('active');
+      current = index;
+      updateUi();
+      trackSlideView(index);
+      if (next.classList.contains('slide--quotes')) startQuotes(next);
+      setTimeout(() => { isAnimating = false; }, 700);
+    }, 350);
+  }
+
+  function updateUi() {
+    counterCurrent.textContent = String(current + 1).padStart(2, '0');
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+    const pct = ((current + 1) / total) * 100;
+    progressFill.style.width = pct + '%';
+  }
+
+  // === GA tracking per slide ===
+  function trackSlideView(index) {
+    if (!window.gtag) return;
+    const slideEl = slides[index];
+    if (!slideEl) return;
+    const slideNum = slideEl.getAttribute('data-slide') || String(index + 1);
+    const eyebrow = slideEl.querySelector('.eyebrow');
+    const headline = slideEl.querySelector('h1.headline, h2.subhead');
+    const labelEl = eyebrow || headline;
+    const title = labelEl ? labelEl.textContent.replace(/\s+/g, ' ').trim().slice(0, 80) : 'Slide ' + slideNum;
+    try {
+      window.gtag('event', 'page_view', {
+        page_path: '/explainers/duterte-drug-war-follies/slide-' + slideNum,
+        page_title: 'Slide ' + slideNum + ' · ' + title,
+        page_location: location.href
+      });
+      window.gtag('event', 'view_slide', {
+        deck: 'duterte-drug-war-follies',
+        slide_number: parseInt(slideNum, 10),
+        slide_title: title,
+        view_mode: document.body.classList.contains('mode-deck') ? 'deck' : 'scroll'
+      });
+    } catch (e) {}
+  }
+
+  // === Mode switching ===
+  const VIEW_KEY = 'explainer-view-mode';
+  const toggleBtns = document.querySelectorAll('.view-toggle__btn');
+
+  function setMode(mode, opts) {
+    opts = opts || {};
+    const isDeck = mode === 'deck';
+    if (isDeck) {
+      document.body.classList.add('mode-deck');
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === current);
+        s.classList.remove('exiting', 'in-view');
+        if (i !== current && s.classList.contains('slide--quotes')) clearQuotes(s);
+      });
+      const active = slides[current];
+      if (active && active.classList.contains('slide--quotes')) startQuotes(active);
+      updateUi();
+      trackSlideView(current);
+    } else {
+      document.body.classList.remove('mode-deck');
+      slides.forEach(s => {
+        s.classList.remove('active', 'exiting');
+        if (s.classList.contains('slide--quotes')) clearQuotes(s);
+      });
+      if (!opts.skipScroll) {
+        requestAnimationFrame(() => {
+          const target = slides[current];
+          if (target && target.scrollIntoView) target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        });
+      }
+    }
+    toggleBtns.forEach(btn => {
+      btn.setAttribute('aria-pressed', btn.dataset.mode === mode ? 'true' : 'false');
+    });
+    try { localStorage.setItem(VIEW_KEY, mode); } catch (e) {}
+    if (window.gtag) { try { window.gtag('event', 'mode_switch', { deck: 'duterte-drug-war-follies', mode: mode }); } catch (e) {} }
+  }
+
+  toggleBtns.forEach(btn => btn.addEventListener('click', () => setMode(btn.dataset.mode)));
+
+  // === IntersectionObserver: scroll-mode reveals + quote overlays + tracking ===
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const slideEl = entry.target;
+      if (entry.isIntersecting) {
+        slideEl.classList.add('in-view');
+        if (!document.body.classList.contains('mode-deck')) {
+          const i = Array.from(slides).indexOf(slideEl);
+          if (i >= 0 && i !== current) {
+            current = i;
+            updateUi();
+            trackSlideView(i);
+          }
+          if (slideEl.classList.contains('slide--quotes')) startQuotes(slideEl);
+        }
+      } else {
+        slideEl.classList.remove('in-view');
+        if (!document.body.classList.contains('mode-deck')) {
+          if (slideEl.classList.contains('slide--quotes')) clearQuotes(slideEl);
+        }
+      }
+    });
+  }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+
+  slides.forEach(s => scrollObserver.observe(s));
+
+  // === Keyboard ===
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault(); go(current + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault(); go(current - 1);
+    } else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(total - 1); }
+  });
+
+  // === Touch ===
+  let touchStartX = 0, touchStartY = 0;
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    if (!document.body.classList.contains('mode-deck')) return;
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    const dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) {
+      if (dx < 0) go(current + 1); else go(current - 1);
+    }
+  }, { passive: true });
+
+  // === Init ===
+  let savedMode = null;
+  try { savedMode = localStorage.getItem(VIEW_KEY); } catch (e) {}
+  setMode(savedMode === 'deck' ? 'deck' : 'scroll', { skipScroll: true });
+  updateUi();
+})();
+</script>
+</body>
+</html>
