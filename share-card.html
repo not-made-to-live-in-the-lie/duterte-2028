@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, follow" />
+<title>Share Card — Filipino Reckonings on Duterte's Drug War</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<!-- Dynamic @page (single-card uses A6, 4-up uses A4); the JS swaps the rule -->
+<style id="print-page-style">@page { size: A6 portrait; margin: 0; }</style>
+<style>
+:root {
+  --bg-page: #1a1a22;
+  --card-bg: #ffffff;
+  --card-fg: #16161c;
+  --card-fg-soft: #4a4a55;
+  --card-fg-muted: #7a7a88;
+  --accent-red: #c92424;
+  --accent-gold: #a87a10;
+  --line: rgba(20, 20, 28, 0.12);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-page);
+  color: #c4c1b8;
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.page {
+  display: grid;
+  gap: 1.4rem;
+  justify-items: center;
+  max-width: 100%;
+}
+
+.controls {
+  display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center;
+}
+.controls__btn {
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 1px solid var(--card-bg);
+  font-family: var(--mono);
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 0.65rem 1.1rem; border-radius: 999px;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.controls__btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+.controls__btn[aria-pressed="true"] { background: var(--accent-gold); color: var(--card-bg); border-color: var(--accent-gold); }
+.controls__btn--ghost {
+  background: transparent;
+  color: #c4c1b8;
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* === THE CARD (shared design used in both single and 4-up) === */
+.card {
+  width: 105mm;
+  height: 148mm;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  padding: 9mm 8mm;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 4mm;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4mm;
+  background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-red) 40%, var(--accent-gold) 40%, var(--accent-gold) 100%);
+}
+.card__head { margin-top: 3mm; display: grid; gap: 2mm; }
+.card__eyebrow {
+  font-family: var(--mono);
+  font-size: 7pt; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent-gold);
+}
+.card__title {
+  font-family: var(--serif);
+  font-weight: 900; font-size: 30pt;
+  line-height: 0.95; letter-spacing: -0.025em;
+  color: var(--accent-red);
+}
+.card__subtitle {
+  font-family: var(--serif);
+  font-style: italic; font-weight: 400; font-size: 11pt;
+  line-height: 1.25; color: var(--card-fg-soft);
+  margin-top: 1.5mm;
+}
+.card__body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4mm; align-items: center;
+}
+.card__qr {
+  width: 38mm; height: 38mm;
+  padding: 2mm;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.card__qr canvas { display: none !important; }
+.card__qr img {
+  display: block !important;
+  width: 100% !important; height: 100% !important;
+  object-fit: contain;
+}
+.card__pitch { display: grid; gap: 2mm; }
+.card__pitch-line {
+  font-family: var(--serif); font-size: 10pt;
+  line-height: 1.35; color: var(--card-fg);
+}
+.card__pitch-line strong { color: var(--accent-red); font-weight: 700; }
+.card__pitch-sources {
+  font-family: var(--mono); font-size: 6pt;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--card-fg-muted); line-height: 1.5;
+}
+.card__foot {
+  display: grid; gap: 2mm;
+  padding-top: 3mm;
+  border-top: 1px solid var(--line);
+}
+.card__url {
+  font-family: var(--mono); font-size: 8.5pt; font-weight: 600;
+  letter-spacing: 0.02em; color: var(--accent-red);
+  word-break: break-all; line-height: 1.3;
+}
+.card__cta-row {
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 2mm;
+}
+.card__cta {
+  font-family: var(--mono); font-size: 7pt; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--card-fg);
+}
+.card__cta-dot { color: var(--accent-gold); margin: 0 0.4em; }
+.card__scan-hint {
+  font-family: var(--mono); font-size: 6pt;
+  font-style: italic; letter-spacing: 0.1em;
+  color: var(--card-fg-muted);
+}
+
+/* === 4-UP SHEET (A4 with 2x2 cards) === */
+.sheet {
+  width: 210mm;       /* A4 portrait width */
+  height: 297mm;      /* A4 portrait height */
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 0;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  position: relative;
+}
+.sheet .card {
+  width: 105mm;
+  height: 148.5mm;
+  box-shadow: none;
+  border-radius: 0;
+  border-right: 1px dashed rgba(20, 20, 28, 0.18);
+  border-bottom: 1px dashed rgba(20, 20, 28, 0.18);
+}
+.sheet .card:nth-child(even) { border-right: 0; }
+.sheet .card:nth-child(n+3)  { border-bottom: 0; }
+
+/* === MODE TOGGLING === */
+body { /* default mode is single */ }
+body .four-up-wrap { display: none; }
+body.mode-4up .single-wrap { display: none; }
+body.mode-4up .four-up-wrap { display: block; }
+
+/* Mobile-friendly preview of the A4 sheet (it's too big otherwise) */
+.four-up-wrap {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+.four-up-wrap__inner {
+  transform-origin: top center;
+  transform: scale(0.45);
+  width: 210mm;
+  height: 297mm;
+  margin-bottom: calc(297mm * -0.55); /* compensate for scale shrink */
+}
+@media (min-width: 1100px) {
+  .four-up-wrap__inner { transform: scale(0.7); margin-bottom: calc(297mm * -0.3); }
+}
+
+.below-card {
+  display: grid; gap: 0.5rem; justify-items: center;
+  max-width: 60ch; text-align: center;
+  font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #888; line-height: 1.6;
+}
+.below-card strong { color: #c4c1b8; }
+
+/* === PRINT STYLES === */
+@media print {
+  html, body {
+    background: white !important;
+    padding: 0 !important;
+    display: block !important;
+    min-height: auto !important;
+    margin: 0 !important;
+  }
+  .controls, .below-card { display: none !important; }
+
+  /* In single mode: only the single card prints */
+  body.mode-4up .single-wrap { display: none !important; }
+  body:not(.mode-4up) .four-up-wrap { display: none !important; }
+
+  /* Single card mode (default): A6 page, one card */
+  body:not(.mode-4up) .card {
+    width: 105mm !important; height: 148mm !important;
+    box-shadow: none !important; border-radius: 0 !important;
+    page-break-inside: avoid; page-break-after: always;
+    margin: 0 !important;
+  }
+
+  /* 4-up mode: A4 page, 4 cards in 2x2 grid (no scaling) */
+  body.mode-4up .four-up-wrap,
+  body.mode-4up .four-up-wrap__inner {
+    transform: none !important;
+    margin: 0 !important;
+    display: block !important;
+    width: 210mm !important; height: 297mm !important;
+    overflow: visible !important;
+  }
+  body.mode-4up .sheet {
+    width: 210mm !important; height: 297mm !important;
+    box-shadow: none !important;
+    page-break-inside: avoid; page-break-after: always;
+  }
+  body.mode-4up .sheet .card {
+    width: 105mm !important;
+    height: 148.5mm !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body { padding: 1rem 0.5rem; }
+  .single-wrap .card { width: 92vw; height: 130vw; padding: 6mm 5mm; }
+  .single-wrap .card__title { font-size: 26pt; }
+  .single-wrap .card__qr { width: 32mm; height: 32mm; }
+  .four-up-wrap__inner { transform: scale(0.32); margin-bottom: calc(297mm * -0.65); }
+}
+</style>
+</head>
+<body class="mode-single">
+
+<div class="page">
+
+  <div class="controls">
+    <button class="controls__btn" id="printSingleBtn" type="button">⎙ &nbsp; Print single card (A6)</button>
+    <button class="controls__btn" id="print4upBtn" type="button">⎙ &nbsp; Print 4 cards on A4</button>
+    <a class="controls__btn controls__btn--ghost" href="index.html">← Back to site</a>
+  </div>
+
+  <!-- SINGLE CARD VIEW (default) -->
+  <div class="single-wrap">
+    <article class="card" id="card-template">
+      <div class="card__head">
+        <div class="card__eyebrow">Filipino Reckonings · 2026</div>
+        <h1 class="card__title">Duterte 2028?</h1>
+        <p class="card__subtitle">Two reckonings on the drug war &mdash; before you vote.</p>
+      </div>
+      <div class="card__body">
+        <div class="card__qr" data-qr role="img" aria-label="QR code linking to the site"></div>
+        <div class="card__pitch">
+          <p class="card__pitch-line">
+            An <strong>evidence-based reckoning</strong> on the drug war &mdash; drawn from
+            the receipts, the rulings, and peer-reviewed research. Read it before any 2028
+            vote.
+          </p>
+          <div class="card__pitch-sources">
+            AMLC · ICC · NIDA · WHO · HRW · Amnesty · BJS · peer-reviewed journals
+          </div>
+        </div>
+      </div>
+      <div class="card__foot">
+        <div class="card__url">not-made-to-live-in-the-lie.github.io/duterte-2028/</div>
+        <div class="card__cta-row">
+          <div class="card__cta">
+            Read<span class="card__cta-dot">·</span>Decide<span class="card__cta-dot">·</span>Share
+          </div>
+          <div class="card__scan-hint">scan with phone camera</div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- 4-UP SHEET VIEW (A4 with 2x2 grid of cards) -->
+  <div class="four-up-wrap">
+    <div class="four-up-wrap__inner">
+      <div class="sheet" id="sheet-4up">
+        <!-- 4 cards will be cloned here by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="below-card" id="instructions">
+    <!-- Instructions are swapped by JS depending on mode -->
+  </div>
+
+</div>
+
+<!-- QR generator (client-side, no external API after load) -->
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@04f46c6/qrcode.min.js"></script>
+<script>
+(function() {
+  var URL_TARGET = 'https://not-made-to-live-in-the-lie.github.io/duterte-2028/';
+
+  // 1) Generate QR on the template card
+  if (typeof QRCode !== 'undefined') {
+    var qrSlot = document.querySelector('#card-template [data-qr]');
+    if (qrSlot) {
+      new QRCode(qrSlot, {
+        text: URL_TARGET,
+        width: 300, height: 300,
+        colorDark: '#16161c', colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+  }
+
+  // 2) Clone the rendered card 4 times into the 4-up sheet
+  //    (run after qrcodejs has had a tick to paint the img)
+  function build4Up() {
+    var template = document.getElementById('card-template');
+    var sheet = document.getElementById('sheet-4up');
+    if (!template || !sheet) return;
+    sheet.innerHTML = '';
+    for (var i = 0; i < 4; i++) {
+      sheet.appendChild(template.cloneNode(true));
+    }
+  }
+  setTimeout(build4Up, 60);
+
+  // 3) Mode toggling — update body class, @page rule, instructions
+  var singleBtn = document.getElementById('printSingleBtn');
+  var fourBtn   = document.getElementById('print4upBtn');
+  var styleEl   = document.getElementById('print-page-style');
+  var instr     = document.getElementById('instructions');
+
+  var INSTR = {
+    single: 'For best print: use <strong>"Actual size"</strong> in the print dialog and select <strong>A6</strong> paper.<br/>To save as PNG, take a screenshot of the card.<br/>To save just the QR, right-click the QR square → <strong>Save image as</strong>.',
+    fourUp: 'For best print: use <strong>"Actual size"</strong> in the print dialog and select <strong>A4</strong> paper. The page already contains 4 cards in a 2×2 grid &mdash; no need for "multiple pages per sheet."<br/>Cut along the dashed lines after printing.'
+  };
+
+  function setMode(mode) {
+    if (mode === '4up') {
+      document.body.classList.add('mode-4up');
+      styleEl.textContent = '@page { size: A4 portrait; margin: 0; }';
+      instr.innerHTML = '<div>' + INSTR.fourUp + '</div>';
+      singleBtn.setAttribute('aria-pressed', 'false');
+      fourBtn.setAttribute('aria-pressed', 'true');
+    } else {
+      document.body.classList.remove('mode-4up');
+      styleEl.textContent = '@page { size: A6 portrait; margin: 0; }';
+      instr.innerHTML = '<div>' + INSTR.single + '</div>';
+      singleBtn.setAttribute('aria-pressed', 'true');
+      fourBtn.setAttribute('aria-pressed', 'false');
+    }
+  }
+  setMode('single'); // initial
+
+  if (singleBtn) singleBtn.addEventListener('click', function() {
+    setMode('single');
+    setTimeout(function() { window.print(); }, 50);
+  });
+  if (fourBtn) fourBtn.addEventListener('click', function() {
+    setMode('4up');
+    setTimeout(function() { window.print(); }, 100);
+  });
+})();
+</script>
+
+</body>
+</html>
