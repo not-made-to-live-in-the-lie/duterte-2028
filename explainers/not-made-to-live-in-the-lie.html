@@ -203,7 +203,7 @@ body.mode-deck .slide {
   position: absolute;
   inset: 0;
   min-height: 0;
-  padding: 5vh 8vw;
+  padding: 5vh 8vw 5.5rem;
   opacity: 0;
   transform: translateY(40px);
   pointer-events: none;
@@ -228,8 +228,14 @@ body.mode-deck .slide.exiting {
 }
 body.mode-deck .slide__inner {
   height: 100%;
-  align-content: center;
+  align-content: safe center;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
 }
+body.mode-deck .slide__inner::-webkit-scrollbar { width: 6px; }
+body.mode-deck .slide__inner::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+body.mode-deck .slide__inner::-webkit-scrollbar-track { background: transparent; }
 
 .eyebrow {
   font-family: var(--mono);
@@ -1404,10 +1410,9 @@ body.mode-deck .hint { display: block; }
 
 /* Source footer per slide */
 .sources {
-  position: absolute;
-  bottom: 5.5rem;
-  left: 8vw;
-  right: 8vw;
+  margin-top: 1.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
   font-family: var(--mono);
   font-size: 0.65rem;
   color: var(--text-muted);
@@ -1496,7 +1501,7 @@ body.mode-deck .hint { display: block; }
 /* Responsive */
 @media (max-width: 900px) {
   .slide { padding: 7vh 5vw 5vh; }
-  body.mode-deck .slide { padding: 4vh 5vw; }
+  body.mode-deck .slide { padding: 4vh 5vw 5rem; }
   .gaslight-grid,
   .contrast-row,
   .scripture-grid,
@@ -1513,8 +1518,7 @@ body.mode-deck .hint { display: block; }
   .dot-grid { grid-template-columns: repeat(40, 1fr); }
   .stat-row { grid-template-columns: 1fr; }
   body.mode-deck .hint { display: none; }
-  .sources { position: static; margin-top: 1.5rem; }
-  body.mode-deck .sources { position: absolute; bottom: 5.5rem; }
+  /* .sources is now always static (defined in base rule) — no special handling needed */
 }
 
 @media (max-width: 600px) {
@@ -1562,7 +1566,7 @@ body.mode-deck .hint { display: block; }
 /* Landscape phones: keep readable */
 @media (max-height: 500px) and (orientation: landscape) {
   .slide { min-height: 100vh; padding: 4vh 5vw; }
-  body.mode-deck .slide { padding: 3vh 5vw; }
+  body.mode-deck .slide { padding: 3vh 5vw 4.5rem; }
   h1.headline { font-size: clamp(1.8rem, 6vw, 3.2rem); }
   h2.subhead { font-size: clamp(1.3rem, 4.5vw, 2rem); }
   .dozen { grid-template-columns: repeat(3, 1fr); }

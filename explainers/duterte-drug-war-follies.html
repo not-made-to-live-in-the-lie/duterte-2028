@@ -390,9 +390,11 @@ body.mode-deck .hint { display: block; }
 .mirror__q strong { color: var(--accent-gold); font-style: normal; font-weight: 600; }
 .mirror__ref { font-family: var(--mono); font-size: 0.66rem; color: var(--accent-gold); letter-spacing: 0.18em; text-transform: uppercase; text-align: right; white-space: nowrap; }
 
-/* Sources footer */
+/* Sources footer — always flows after content (no more absolute pin, which collided with compassion notes) */
 .sources {
-  position: absolute; bottom: 5.5rem; left: 8vw; right: 8vw;
+  margin-top: 1.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
   font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted);
   letter-spacing: 0.08em; opacity: 0.7; max-width: 100%;
 }
@@ -633,8 +635,7 @@ body.mode-deck .hint { display: block; }
   .mirror__item { grid-template-columns: 40px 1fr; }
   .mirror__ref { grid-column: 2; text-align: left; margin-top: 0.3rem; }
   body.mode-deck .hint { display: none; }
-  .sources { position: static; margin-top: 1.5rem; }
-  body.mode-deck .sources { position: absolute; bottom: 5.5rem; }
+  /* .sources is now always static (defined in base rule) — no special handling needed */
 }
 @media (max-width: 600px) {
   .slide { padding: 6.5vh 4.5vw 4vh; }
