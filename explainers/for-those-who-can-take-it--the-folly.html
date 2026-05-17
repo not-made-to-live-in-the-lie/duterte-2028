@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="For those who can take it — the folly, direct version. The composite lie that drug addicts are rapists, killers, and thieves, named and refuted. The class war disguised as a drug war. The folly of distance." />
+<meta name="robots" content="noindex, follow" />
+<meta name="theme-color" content="#07070c" />
+<title>For Those Who Can Take It… — The Folly, Direct</title>
+
+<!-- Social-share image -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="For Those Who Can Take It… — The Folly, Direct" />
+<meta property="og:description" content="The direct version. The composite lie that drug addicts are rapists, killers, and thieves — called what it is, with the research record beside it." />
+<meta property="og:url" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/explainers/for-those-who-can-take-it--the-folly.html" />
+<meta property="og:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
+<meta property="og:image:secure_url" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="760" />
+<meta property="og:image:height" content="1069" />
+<meta property="og:image:alt" content="Duterte 2028? Two reckonings on the drug war." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="For Those Who Can Take It… — The Folly" />
+<meta name="twitter:description" content="The direct version. The composite lie, called what it is." />
+<meta name="twitter:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
+
+<script>window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';</script>
+<script>
+(function() {
+  var id = window.GA_MEASUREMENT_ID;
+  if (!id || id === 'G-XXXXXXXXXX') return;
+  var s = document.createElement('script');
+  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', id, { send_page_view: true, page_path: '/explainers/for-those-who-can-take-it--the-folly' });
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --bg-base: #050508;
+  --text-primary: #f5f4ee;
+  --text-secondary: #c4c1b8;
+  --text-muted: #7a7468;
+  --accent-red: #e23a3a;
+  --accent-gold: #f0bb4b;
+  --accent-rose-soft: #d8b5b0;
+  --line: rgba(245, 244, 238, 0.08);
+  --line-strong: rgba(245, 244, 238, 0.18);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-base); color: var(--text-secondary);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55; overflow-x: hidden; min-height: 100vh;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse at top, rgba(226, 58, 58, 0.10), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(240, 187, 75, 0.04), transparent 50%);
+  pointer-events: none;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 0;
+  background-image: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px);
+  pointer-events: none; mix-blend-mode: overlay;
+}
+
+.toolbar {
+  position: fixed; top: 0.9rem; right: 1rem; z-index: 60;
+  display: flex; gap: 0.5rem;
+}
+.toolbar a {
+  font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-muted); text-decoration: none;
+  padding: 0.45rem 0.85rem; border: 1px solid var(--line);
+  border-radius: 999px; background: rgba(8,8,12,0.7);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  transition: color 200ms ease, border-color 200ms ease;
+}
+.toolbar a:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
+
+main {
+  position: relative; z-index: 1;
+  max-width: 720px; margin: 0 auto;
+  padding: 12vh 6vw 14vh;
+  display: grid; gap: 4rem;
+}
+
+.hero { display: grid; gap: 1.2rem; }
+.hero__eyebrow {
+  font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--accent-red);
+  display: flex; align-items: center; gap: 1rem;
+}
+.hero__eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--accent-red); }
+.hero__title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 0.98; letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+.hero__title em { font-style: italic; font-weight: 400; color: var(--accent-red); }
+.hero__sub {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  line-height: 1.35; color: var(--text-secondary);
+}
+
+.warning {
+  padding: 1.2rem 1.4rem;
+  background: rgba(200, 152, 147, 0.08);
+  border: 1px solid rgba(200, 152, 147, 0.32);
+  border-radius: 6px;
+  display: grid; grid-template-columns: auto 1fr; gap: 1rem;
+  font-size: 0.92rem; line-height: 1.55;
+  color: var(--text-secondary);
+}
+.warning__icon { font-size: 1.2rem; color: var(--accent-rose-soft); }
+.warning__text strong { color: var(--accent-rose-soft); font-weight: 600; }
+.warning__text em { color: var(--accent-gold); font-style: italic; }
+
+section.beat { display: grid; gap: 1.2rem; }
+.beat__num {
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent-red);
+}
+.beat__head {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.beat__head em { font-style: italic; color: var(--accent-red); font-weight: 600; }
+.beat p {
+  font-family: var(--serif); font-size: 1.08rem;
+  line-height: 1.6; color: var(--text-secondary);
+}
+.beat p strong { color: var(--text-primary); font-weight: 600; }
+.beat p em { color: var(--accent-gold); font-style: italic; }
+
+.subclaim {
+  margin-top: 0.6rem;
+  padding: 1.2rem 1.4rem;
+  background: rgba(15, 15, 23, 0.6);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-red);
+  border-radius: 0 6px 6px 0;
+  display: grid; gap: 0.7rem;
+}
+.subclaim__label {
+  font-family: var(--mono); font-size: 0.66rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent-red);
+}
+.subclaim__verdict {
+  font-family: var(--serif); font-size: 1.2rem;
+  font-weight: 600; color: var(--text-primary);
+  line-height: 1.3;
+}
+.subclaim__body { font-size: 0.95rem; line-height: 1.55; color: var(--text-secondary); }
+.subclaim__body strong { color: var(--text-primary); font-weight: 600; }
+
+.pullquote {
+  margin: 1rem 0; padding: 1.4rem 0 1.4rem 1.6rem;
+  border-left: 3px solid var(--accent-red);
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.3; color: var(--text-primary);
+}
+.pullquote__attr {
+  display: block; margin-top: 0.7rem;
+  font-family: var(--mono); font-style: normal;
+  font-size: 0.68rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent-red);
+}
+
+.mirror { display: grid; gap: 1rem; margin-top: 0.5rem; counter-reset: qcount; }
+.mirror__q {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.4; color: var(--text-primary);
+  padding: 0.9rem 0 0.9rem 1.4rem;
+  border-left: 2px solid var(--accent-gold);
+}
+.mirror__q::before {
+  content: counter(qcount, decimal-leading-zero) ' · ';
+  counter-increment: qcount;
+  font-family: var(--mono); font-style: normal;
+  color: var(--accent-gold);
+  font-size: 0.78rem; letter-spacing: 0.18em;
+}
+.mirror__q strong { color: var(--accent-gold); font-style: normal; font-weight: 600; }
+
+.outro {
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--line);
+  display: grid; gap: 1.2rem;
+}
+.outro h2 {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.15; color: var(--text-primary);
+}
+.outro h2 em { font-style: italic; color: var(--accent-gold); font-weight: 400; }
+.outro__links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.outro__links a {
+  font-family: var(--mono); font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-secondary); text-decoration: none;
+  padding: 0.6rem 1rem; border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  transition: all 200ms ease;
+}
+.outro__links a:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+footer {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-muted); line-height: 1.7;
+}
+
+/* Compassion note — warm dusty-rose; the sharpness of this deck is never aimed at
+   survivors or grieving families, only at the rhetoric and the policy. */
+.compassion-note {
+  margin: 1rem 0 0;
+  padding: 1.1rem 1.3rem 1.1rem 1.5rem;
+  background: rgba(216, 181, 176, 0.05);
+  border-left: 3px solid var(--accent-rose-soft);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--serif); font-style: italic;
+  font-size: 1rem; line-height: 1.6;
+  color: var(--text-secondary);
+}
+.compassion-note::before {
+  content: 'if this is your story';
+  display: block; margin-bottom: 0.6rem;
+  font-family: var(--mono); font-style: normal;
+  font-size: 0.62rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent-rose-soft); font-weight: 500;
+}
+.compassion-note strong {
+  color: var(--text-primary); font-style: italic; font-weight: 500;
+  background: linear-gradient(180deg, transparent 65%, rgba(216, 181, 176, 0.22) 65%);
+  padding: 0 2px;
+}
+.compassion-note em { color: var(--text-primary); font-style: italic; font-weight: 400; }
+
+/* Support resources */
+.support-resources {
+  margin-top: 2rem;
+  padding: 1.6rem 1.5rem 1.8rem;
+  background: rgba(15, 15, 23, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid; gap: 0.9rem;
+}
+.support-resources__head {
+  font-family: var(--mono); font-size: 0.68rem;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-gold);
+}
+.support-resources__intro {
+  font-family: var(--serif); font-style: italic;
+  font-size: 0.96rem; line-height: 1.55; color: var(--text-secondary);
+}
+.support-resources__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem;
+}
+.support-resources__group { display: grid; gap: 0.4rem; }
+.support-resources__label {
+  font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--text-primary);
+}
+.support-resources__list {
+  font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);
+  list-style: none; display: grid; gap: 0.2rem;
+}
+.support-resources__list li { padding-left: 1rem; position: relative; }
+.support-resources__list li::before {
+  content: '→'; position: absolute; left: 0;
+  color: var(--accent-gold); font-family: var(--mono);
+}
+.support-resources__list a {
+  color: var(--text-secondary); text-decoration: none;
+  border-bottom: 1px dotted var(--line-strong);
+}
+.support-resources__list a:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+@media (max-width: 700px) { .support-resources__grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="../index.html" title="Back to the index">← Index</a>
+  <a href="duterte-drug-war-follies.html" title="Read the gentler version">Gentler version</a>
+</div>
+
+<main>
+
+  <header class="hero">
+    <div class="hero__eyebrow">For those who can take it · 2026</div>
+    <h1 class="hero__title">
+      The folly,<br/>
+      <em>direct version.</em>
+    </h1>
+    <p class="hero__sub">
+      The composite lie that drug addicts are rapists, killers, and thieves who deserve
+      to die &mdash; called what it is. The same research, the same data, none of the
+      polite framing.
+    </p>
+  </header>
+
+  <div class="warning" role="region" aria-label="Content notice">
+    <div class="warning__icon" aria-hidden="true">⚠</div>
+    <div class="warning__text">
+      <strong>This is the direct version.</strong> The main read avoids calling things a
+      <em>lie</em> or a <em>folly</em> at the door &mdash; this one does. If sharper words feel
+      uncalled-for, the
+      <a href="duterte-drug-war-follies.html" style="color: var(--accent-gold);">main version</a>
+      is one click away. <strong>Survivors of sexual violence and grieving families: the
+      sharpness on this page is aimed at the policy and the rhetoric, never at you.</strong>
+      Inline notes for readers carrying related grief appear at each sub-claim; full
+      <a href="#support" style="color: var(--accent-gold);">support resources are at the
+      bottom of this page</a>.
+    </div>
+  </div>
+
+  <section class="beat">
+    <div class="beat__num">01 · The composite lie · named</div>
+    <h2 class="beat__head">The rhetoric that opened the door to <em>~30,000 killings</em>.</h2>
+    <p>
+      The fusion was seamless and it was a lie: <strong>drug addict → criminal → rapist
+      → killer → thief → deserves death.</strong> Each link in that chain is empirically
+      wrong. The chain still worked because it bypassed evidence and went straight for the
+      gut. And the unstated qualifier was always: the <em>poor</em> addict will rape your
+      daughter, never the rich one. The wealthy addict goes to private rehab. The poor
+      addict gets a bullet in an alley.
+    </p>
+    <div class="pullquote">
+      "Hitler massacred 3 million Jews. Now there is 3 million drug addicts… I'd be
+      happy to slaughter them."
+      <span class="pullquote__attr">&mdash; Rodrigo Duterte, Davao, Sep 30 2016 · Inquirer / CNN / Bloomberg / AJ / PBS</span>
+    </div>
+    <p>
+      The man said it on the record. Filipinos clapped. <strong>Then 30,000 mostly-poor
+      Filipinos died, and many of us went on with our Sundays.</strong>
+    </p>
+  </section>
+
+  <section class="beat">
+    <div class="beat__num">02 · The three sub-claims · refuted in both directions</div>
+    <h2 class="beat__head">The research has been in for decades.</h2>
+
+    <div class="subclaim">
+      <div class="subclaim__label">Folly #1 · drug user → rapist</div>
+      <div class="subclaim__verdict">Most drug users do not commit rape. Most rapists are not drug-dependent.</div>
+      <div class="subclaim__body">
+        Rape is driven by <strong>power, anger, and control</strong>, not sexual desire
+        (Groth typology, OJP/DOJ-cited). Most rapes are planned. ~70 % of perpetrators
+        are someone the victim knows (RAINN). The personality and attitudes of
+        perpetrators who drink during assault are <strong>the same as</strong> those who
+        don't drink (Abbey et al., PMC peer-reviewed review). Drugs <em>disinhibit</em>;
+        they do not create a rapist disposition. <strong>The science was never on the
+        side of the killings.</strong>
+      </div>
+    </div>
+
+    <div class="compassion-note">
+      To anyone reading this who carries the weight of sexual assault &mdash; <strong>whenever
+      it happened, whoever did it, and whether or not any substance was involved</strong>:
+      the experience of survivors is real, and what is done in these crimes is never the
+      survivor's fault. The research above describes patterns across the people who commit
+      these crimes &mdash; it does not reduce any individual story to a number. The
+      statistics exist here for one reason only: to show that the stylized image used to
+      justify EJKs does not match the evidence &mdash; and that the killings did not make
+      survivors any safer. <strong>Real safety, real justice, and real accountability
+      remain unfinished work &mdash; owed to every survivor, in every case still without
+      closure.</strong>
+    </div>
+
+    <div class="subclaim">
+      <div class="subclaim__label">Folly #2 · drug user → killer</div>
+      <div class="subclaim__verdict">Most drug users are non-violent. Most homicide perpetrators are not drug-dependent.</div>
+      <div class="subclaim__body">
+        Per BJS / FBI UCR (2007): only <strong>3.9 %</strong> of US homicides with known
+        circumstances were narcotics-related. Per BJS 2004 Survey of Inmates: violent
+        offenders were only <strong>10 %</strong> likely to have committed the crime for
+        drug money (vs 30 % property, 26 % drug). Most "drug-related" violence is
+        <strong>systemic</strong> (drug-market turf disputes, per Goldstein 1985, OJP)
+        &mdash; not the cartoon addict who snapped. <strong>The cartoon was always wrong.</strong>
+      </div>
+    </div>
+
+    <div class="compassion-note">
+      To anyone grieving someone lost to homicide &mdash; drug-related, vigilante, EJK,
+      domestic, accident-disguised-as-violence, or any cause at all, whether years ago or
+      recent: <strong>this page does not minimize losses like these.</strong> Statistics
+      are how we expose policy failures; they are not how anyone measures grief. No loved
+      one in any of these cases is a number. The numbers exist here to show that the
+      policy did not honor them either &mdash; it killed in their name without protecting
+      anyone, and the justice these cases deserve has still not been delivered.
+    </div>
+
+    <div class="subclaim">
+      <div class="subclaim__label">Folly #3 · drug user → thief</div>
+      <div class="subclaim__verdict">Most drug users do not steal. Most thieves are not drug-addicted.</div>
+      <div class="subclaim__body">
+        The link is real but conditional &mdash; concentrated in <strong>severe
+        heroin/crack dependence under poverty</strong> (Goldstein "economic-compulsive").
+        85 % of burglary inmates report substance dependence; only ~25 % committed the
+        crime for drug money. OJP "Professional Thieves and Drugs": criminal activity
+        began <strong>before</strong> drug use, addiction was incidental. The implied
+        solution is <strong>treatment and economic safety nets</strong>, not bullets.
+        <strong>Never bullets.</strong>
+      </div>
+    </div>
+
+    <div class="compassion-note">
+      To anyone, anywhere, who has been hurt by theft, addiction-adjacent crime, or
+      watched a loved one's substance struggle &mdash; <strong>whether during the drug
+      war or long before it</strong>: that fear was, and is, real for the communities
+      who lived it. The case here is not that those harms were imaginary &mdash; it is
+      that <strong>bullets in alleys did not protect those communities</strong>, and
+      the kingpins were never jailed. The data shows it. Communities that lived with
+      this deserved real safety: rehab access, livelihood, community policing, due
+      process for the few who do harm, and accountability all the way up the chain.
+      Not a war that killed neighbors and left the actual traffickers untouched.
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat__num">03 · The folly of believing the cartoon</div>
+    <h2 class="beat__head">The image carried in our heads <em>was already half the killing</em>.</h2>
+    <p>
+      When the pulpit said <em>"drug addict,"</em> what did you picture? Male. Poor.
+      Tattooed. Unpredictable. Dangerous. Already half a criminal. <strong>The cartoon was
+      always class-coded.</strong> It was never the businessman with a coke habit or the
+      mayor's son with a pill problem. By design, it lived in the slum.
+    </p>
+    <p>
+      That image &mdash; not the actual person killed in an alley &mdash; is what most
+      Filipino Christians were defending when they defended the drug war. The folly was
+      not the killing alone. <strong>The folly was the picture in your head.</strong>
+    </p>
+  </section>
+
+  <section class="beat">
+    <div class="beat__num">04 · The class war disguised as a drug war</div>
+    <h2 class="beat__head">It was never a war on drugs. <em>It was a war on people who couldn't fight back.</em></h2>
+    <p>
+      Amnesty International's 2017 report title was the policy summary:
+    </p>
+    <div class="pullquote">
+      "If you are poor, you are killed."
+      <span class="pullquote__attr">&mdash; Amnesty International, ASA 35/5517/2017</span>
+    </div>
+    <p>
+      ICC witness testimony: <em>"Oplan Tokhang had to target the poor because they have
+      no capacity to sue."</em> Deaths concentrated in Caloocan alleys, Tondo backlots,
+      Payatas slopes. <strong>Almost none in gated subdivisions.</strong>
+    </p>
+    <p>
+      Meanwhile the alleged drug lord Samuel "Sammy" Uy paid the Duterte family
+      <strong>₱181.6 million</strong> (AMLC, House Justice Committee, Apr 2026).
+      Protected. Never raided. Never on a tokhang list. Wealthy addicts went to private
+      rehab. Politicians' sons caught with drugs faced lawyers and plea deals.
+      <strong>Tens of thousands of deaths produced almost zero kingpin convictions.</strong>
+      The shortcuts were the policy.
+    </p>
+  </section>
+
+  <section class="beat">
+    <div class="beat__num">05 · The folly of Christian distance</div>
+    <h2 class="beat__head">You were never going to be on the list. <em>And that is why the killings did not break your sleep.</em></h2>
+    <p>
+      The Christians who supported &mdash; or <em>quietly tolerated</em> &mdash; the drug
+      war were overwhelmingly <strong>not the people being killed</strong>. The pulpit
+      congregations came from gated subdivisions, condominiums, professional-class
+      suburbs. The dead came from informal settlements. <strong>Two Philippines. One
+      paid for the other's policy.</strong>
+    </p>
+    <p>
+      It was easy to support harsher judgment for the poor because the harsh judgment was
+      happening to <em>other people</em>. The pulpit said <em>"drug addict"</em> and the
+      comfortable Christian heard <em>"those people in the slum"</em> &mdash; not <em>"my
+      cousin, my uncle, my neighbor."</em>
+    </p>
+    <p style="color: var(--accent-gold); font-weight: 500;">
+      If 30,000 had been killed in Forbes Park, BGC, or Ayala Heights, the drug war would
+      have been stopped in a week.
+    </p>
+    <div class="pullquote">
+      "If you really keep the royal law &mdash; 'Love your neighbor as yourself' &mdash;
+      you are doing right. But if you show favoritism, you sin&hellip; You have dishonored
+      the poor."
+      <span class="pullquote__attr">&mdash; James 2:8&ndash;9, 6 (NIV)</span>
+    </div>
+    <p>
+      Christian elitism does not look like cruelty. It looks like <strong>distance</strong>.
+      Like quiet relief that the trouble is in someone else's barangay. <strong>That
+      distance was the political condition for the killings.</strong>
+    </p>
+  </section>
+
+  <section class="beat">
+    <div class="beat__num">06 · The mirror</div>
+    <h2 class="beat__head">Six questions, undiluted.</h2>
+    <div class="mirror">
+      <p class="mirror__q">
+        When the pulpit said <strong>"drug addict,"</strong> did I picture the shabu-crazed
+        predator from the slum &mdash; or a real human being I have ever actually known?
+      </p>
+      <p class="mirror__q">
+        Did I assume a tokhang list was a <strong>clinical diagnosis</strong> &mdash; rather
+        than barangay hearsay collected in a drop box?
+      </p>
+      <p class="mirror__q">
+        Did I conflate <strong>"addict"</strong> with <strong>"rapist," "killer," or "thief"</strong>
+        because a politician's rhetoric did &mdash; not because the evidence does?
+      </p>
+      <p class="mirror__q">
+        Did I notice that <strong>none of the dead came from gated subdivisions</strong>?
+        Did my silence cost me nothing because the killings were in someone else's barangay?
+        Was that not the very <strong>favoritism</strong> James warned against?
+      </p>
+      <p class="mirror__q">
+        Would I want my own <strong>struggling cousin or uncle</strong> on such a list &mdash;
+        with no diagnosis, no lawyer, no right of appeal?
+      </p>
+      <p class="mirror__q">
+        When the next "drug suspect" is shot, <strong>will my voice be there</strong> &mdash;
+        or will I have already spent it defending the killers?
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat__num">07 · The resolution</div>
+    <h2 class="beat__head">We can share the lament. <em>We cannot share the impunity.</em></h2>
+    <p>
+      The family abused by addiction is innocent. The child harmed by a strung-out
+      neighbor is innocent. <strong>Their grief is real. Their cry for safety is
+      righteous.</strong> Solving the drug problem and refusing extrajudicial killings
+      are <em>not opposites</em>. Both can be true. Both must be.
+    </p>
+    <p>
+      But forbearance has limits. You cannot extend <em>"forbearance"</em> to
+      <strong>theft and killing dressed up as policy</strong>. That is not reconciliation
+      &mdash; that is collaboration. The Bible asks forbearance between equals in
+      disagreement; it never asks it of the powerful crushing the powerless.
+    </p>
+    <p style="color: var(--accent-red); font-weight: 500;">
+      Impunity is the actual enemy here. The power to kill, steal, and walk away
+      unaccountable. That is what we are fighting &mdash; not addicts in slums.
+    </p>
+  </section>
+
+  <div class="outro">
+    <h2>If you got this far, <em>you have the stomach for what comes next</em>.</h2>
+    <p style="font-family: var(--serif); font-size: 1.08rem; line-height: 1.6; color: var(--text-secondary);">
+      Re-learn. Re-look. Refuse. Repair. The truth is still calling.
+    </p>
+    <div class="outro__links">
+      <a href="duterte-drug-war-follies.html">Open the main read</a>
+      <a href="for-those-who-can-take-it--the-reckoning.html">Companion: the reckoning</a>
+      <a href="../index.html">Back to index</a>
+    </div>
+  </div>
+
+  <aside class="support-resources" id="support" aria-labelledby="support-h">
+    <div class="support-resources__head" id="support-h">If reading this stirred something in you &mdash; you are not alone</div>
+    <p class="support-resources__intro">
+      This page talks about hard things. If you are a survivor of sexual assault, if you
+      lost someone to the drug war, or if you are sitting with grief that has never had a
+      place to land &mdash; please reach out. These lines and groups exist for you.
+    </p>
+    <div class="support-resources__grid">
+      <div class="support-resources__group">
+        <div class="support-resources__label">For survivors of sexual violence</div>
+        <ul class="support-resources__list">
+          <li><strong>DSWD Crisis Intervention</strong> &mdash; dial <strong>1343</strong> (PH; also anti-trafficking)</li>
+          <li><strong>Women's Crisis Center</strong> &mdash; (02) 8927-7882 / 0917-862-2530</li>
+          <li><strong>Lunas Collective</strong> &mdash; <a href="https://www.lunascollective.org/" target="_blank" rel="noopener">lunascollective.org</a></li>
+          <li><strong>Philippine Commission on Women</strong> &mdash; <a href="https://pcw.gov.ph/" target="_blank" rel="noopener">pcw.gov.ph</a></li>
+        </ul>
+      </div>
+      <div class="support-resources__group">
+        <div class="support-resources__label">For families of EJK / drug-war victims</div>
+        <ul class="support-resources__list">
+          <li><strong>Rise Up for Life and for Rights</strong> &mdash; <a href="https://www.facebook.com/RiseUpForLifeAndForRights/" target="_blank" rel="noopener">facebook.com/RiseUpForLifeAndForRights</a></li>
+          <li><strong>iDEFEND</strong> (In Defense of Human Rights and Dignity Movement)</li>
+          <li><strong>National Union of Peoples' Lawyers</strong> &mdash; legal aid for EJK families</li>
+          <li><strong>Free Legal Assistance Group (FLAG)</strong> &mdash; pro-bono representation</li>
+        </ul>
+      </div>
+      <div class="support-resources__group">
+        <div class="support-resources__label">Mental health &amp; crisis support</div>
+        <ul class="support-resources__list">
+          <li><strong>National Mental Health Crisis Hotline</strong> &mdash; <strong>1553</strong> (toll-free, nationwide)</li>
+          <li><strong>NCMH Crisis Line</strong> &mdash; 0966-351-4518 / (02) 7-989-USAP (8727)</li>
+          <li><strong>In Touch Community Services</strong> &mdash; (02) 8893-7603</li>
+        </ul>
+      </div>
+      <div class="support-resources__group">
+        <div class="support-resources__label">If you are in immediate danger</div>
+        <ul class="support-resources__list">
+          <li><strong>Emergency hotline</strong> &mdash; <strong>911</strong></li>
+          <li>If a family member has been picked up by police &mdash; demand a lawyer; call <strong>FLAG</strong> or <strong>NUPL</strong> before any statement.</li>
+          <li>Document everything: names, badge numbers, vehicles, witnesses. The record matters later.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="support-resources__intro" style="margin-top: 0.4rem; font-size: 0.82rem; color: var(--text-muted);">
+      Hotlines are not perfect. If one number doesn't respond, try another. Reach out to a
+      parish, a barangay social worker, a trusted friend. <strong style="color: var(--text-secondary);">You
+      are not a burden. You are someone whose life was cut against, and whose life still matters.</strong>
+    </p>
+  </aside>
+
+  <footer>
+    For those who can take it · A Filipino civic project, ahead of 2028.<br/>
+    Sources: NIDA · WHO · CDC · BJS · OJP · HRW · Amnesty · ICC · AMLC · peer-reviewed journals.
+  </footer>
+
+</main>
+
+</body>
+</html>

@@ -24,17 +24,19 @@
 <meta property="og:site_name" content="Filipino Reckonings" />
 <meta property="og:locale" content="en_PH" />
 <meta property="og:title" content="We Were Not Made to Live in the Lie — A Reckoning on Duterte's Drug War" />
-<meta property="og:description" content="Twelve slides on the lies that justified ~30,000 EJKs &mdash; for the brothers, sisters, and pastors who still defended it. AMLC, Trillanes, ICC, Kian." />
+<meta property="og:description" content="Twelve slides on the central lies that justified ~30,000 EJKs &mdash; for the brothers, sisters, and pastors who supported it. AMLC, Trillanes, ICC, Kian." />
 <meta property="og:url" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/explainers/not-made-to-live-in-the-lie.html" />
-<meta property="og:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
+<meta property="og:image:secure_url" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="760" />
+<meta property="og:image:height" content="1069" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="We Were Not Made to Live in the Lie" />
 <meta name="twitter:description" content="A twelve-slide reckoning with Duterte's drug war. AMLC findings. Trillanes vindicated. ICC charges. Kian delos Santos." />
-<meta name="twitter:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/og-image.png" />
+<meta name="twitter:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -464,9 +466,12 @@ body.mode-deck .hint { display: block; }
   outline-offset: 2px;
 }
 
-/* Cross-deck link */
-.cross-link {
+/* Cross-deck links */
+.cross-nav {
   position: fixed; top: 0.9rem; right: 1rem; z-index: 60;
+  display: flex; gap: 0.4rem;
+}
+.cross-link {
   font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--text-muted); text-decoration: none;
   padding: 0.45rem 0.85rem; border: 1px solid var(--line);
@@ -475,8 +480,14 @@ body.mode-deck .hint { display: block; }
   transition: color 200ms ease, border-color 200ms ease;
 }
 .cross-link:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
+.cross-link--direct {
+  border-color: rgba(226, 58, 58, 0.35);
+  color: var(--accent-rose-soft);
+}
+.cross-link--direct:hover { color: var(--accent-red); border-color: var(--accent-red); }
 @media (max-width: 600px) {
-  .cross-link { top: 0.55rem; right: 0.6rem; font-size: 0.55rem; padding: 0.35rem 0.6rem; }
+  .cross-nav { top: 0.55rem; right: 0.6rem; gap: 0.3rem; }
+  .cross-link { font-size: 0.55rem; padding: 0.35rem 0.6rem; }
 }
 
 /* ====== SLIDE 1 — Opening ====== */
@@ -1467,7 +1478,7 @@ body.mode-deck .hint { display: block; }
   max-width: 70ch; position: relative;
 }
 .compassion-note::before {
-  content: '♡  a note for you';
+  content: 'if this is your story';
   display: block; margin-bottom: 0.55rem;
   font-family: var(--mono); font-style: normal;
   font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
@@ -1580,7 +1591,10 @@ body.mode-deck .hint { display: block; }
   <button class="view-toggle__btn" data-mode="deck" aria-pressed="false" type="button">Slides</button>
 </div>
 
-<a class="cross-link" href="../index.html" title="Back to the index of explainers">← Index</a>
+<nav class="cross-nav" aria-label="Other reads">
+  <a class="cross-link" href="../index.html" title="Back to the index of explainers">← Index</a>
+  <a class="cross-link cross-link--direct" href="for-those-who-can-take-it--the-reckoning.html" title="The direct, unfiltered version of this read">Direct version →</a>
+</nav>
 
 <div class="progress"><div class="progress__fill" id="progressFill"></div></div>
 
@@ -1636,7 +1650,7 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 2 — The Gaslighting Trap ============ -->
   <section class="slide" data-slide="2">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">The trap we step into first</div>
+      <div class="eyebrow eyebrow--red reveal">The argument that ended the conversation</div>
       <h2 class="subhead reveal">
         "We deserve the leaders we get."<br/>
         <em>True &mdash; but listen to that sentence again, slowly.</em>
@@ -1957,7 +1971,7 @@ body.mode-deck .hint { display: block; }
 
         <div class="smoke-callout reveal">
           <div class="smoke-callout__title">
-            Trillanes was right all along — 10 years ago.
+            The Trillanes affidavit, ten years on &mdash; corroborated by AMLC.
           </div>
           <ul class="smoke-callout__list">
             <li>AMLC: <strong>₱6.77 billion</strong> in large/suspicious transactions through Sara Duterte's accounts (2006–2025).</li>
@@ -2047,7 +2061,8 @@ body.mode-deck .hint { display: block; }
       </h2>
       <p class="lede reveal" style="font-size: clamp(1rem, 1.5vw, 1.25rem); max-width: 70ch;">
         This is not a verdict on your faith. It is six questions for the Filipino Christian
-        who still defends — or quietly tolerates — the drug war. Sit with them honestly.
+        who supported the drug war, or did not yet have reason to oppose it. Sit with them
+        honestly.
       </p>
 
       <div class="mirror">

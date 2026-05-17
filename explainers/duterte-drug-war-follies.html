@@ -6,7 +6,7 @@
 
 <!-- Primary SEO -->
 <title>The Folly of the Drug War — What Actually Makes a Rapist, a Killer, a Thief</title>
-<meta name="description" content="Duterte 2028? The folly of Duterte's drug war, in fourteen slides &mdash; the composite lie that drug addicts are rapists, killers, and thieves who deserve to die, debunked with NIDA, WHO, CDC, BJS, OJP, peer-reviewed research, Amnesty International, HRW, and the ICC. The class war disguised as a drug war. The folly of comfortable Christian distance. Essential reading before voting in 2028." />
+<meta name="description" content="Duterte 2028? Fourteen slides examining the central composite claim used to justify the drug war &mdash; that drug users are rapists, killers, and thieves who deserve to die &mdash; against NIDA, WHO, CDC, BJS, OJP, peer-reviewed research, Amnesty International, HRW, and the ICC. The class pattern of who was actually killed. The distance that shaped how the campaign was received. Worth reading before any 2028 vote." />
 <meta name="keywords" content="Duterte, drug war, Philippines, folly, drug addicts rapists myth, extrajudicial killings, Oplan Tokhang, NIDA, WHO, BJS, Goldstein tripartite framework, sexual violence research, Amnesty if you are poor you are killed, Sammy Uy, AMLC, Filipino Christian elitism, James 2:6" />
 <meta name="author" content="Filipino advocacy project" />
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
@@ -24,17 +24,19 @@
 <meta property="og:site_name" content="Filipino Reckonings" />
 <meta property="og:locale" content="en_PH" />
 <meta property="og:title" content="The Folly of the Drug War — What Actually Makes a Rapist, a Killer, a Thief" />
-<meta property="og:description" content="Fourteen slides dismantling the composite lie that justified Duterte's drug war: drug addicts as rapists, killers, thieves who deserve to die. Built on NIDA, WHO, BJS, OJP, Amnesty, HRW, ICC." />
+<meta property="og:description" content="Fourteen slides examining the central composite claim that justified Duterte's drug war &mdash; drug users as rapists, killers, thieves &mdash; against NIDA, WHO, BJS, OJP, Amnesty, HRW, ICC." />
 <meta property="og:url" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/explainers/duterte-drug-war-follies.html" />
-<meta property="og:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
+<meta property="og:image:secure_url" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="760" />
+<meta property="og:image:height" content="1069" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="The Folly of the Drug War" />
-<meta name="twitter:description" content="What actually makes a rapist, a killer, a thief &mdash; and what doesn't. The composite lie debunked with high-quality research." />
-<meta name="twitter:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/og-image.png" />
+<meta name="twitter:description" content="What actually makes a rapist, a killer, a thief &mdash; and what doesn't. The central claim of the drug war examined against high-quality research." />
+<meta name="twitter:image" content="https://not-made-to-live-in-the-lie.github.io/duterte-2028/images/not-made-to-live-in-the-lie.jpg" />
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -42,7 +44,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "The Folly of the Drug War — What Actually Makes a Rapist, a Killer, a Thief",
-  "description": "A fourteen-slide reckoning with the composite lie that justified Duterte's drug war.",
+  "description": "A fourteen-slide reckoning examining the central claim that justified Duterte's drug war, against the research record.",
   "url": "https://not-made-to-live-in-the-lie.github.io/duterte-2028/explainers/duterte-drug-war-follies.html",
   "inLanguage": "en-PH",
   "isPartOf": {
@@ -277,9 +279,12 @@ body.mode-deck .hint { display: block; }
 .view-toggle__btn[aria-pressed="true"] { background: var(--accent-gold); color: var(--bg-base); }
 .view-toggle__btn:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
 
-/* Cross-deck link */
-.cross-link {
+/* Cross-deck links */
+.cross-nav {
   position: fixed; top: 0.9rem; right: 1rem; z-index: 60;
+  display: flex; gap: 0.4rem;
+}
+.cross-link {
   font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--text-muted); text-decoration: none;
   padding: 0.45rem 0.85rem; border: 1px solid var(--line);
@@ -288,6 +293,11 @@ body.mode-deck .hint { display: block; }
   transition: color 200ms ease, border-color 200ms ease;
 }
 .cross-link:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
+.cross-link--direct {
+  border-color: rgba(226, 58, 58, 0.35);
+  color: var(--accent-rose-soft);
+}
+.cross-link--direct:hover { color: var(--accent-red); border-color: var(--accent-red); }
 
 /* Two-column directional card (forward / reverse refutation) */
 .bidirect {
@@ -541,7 +551,7 @@ body.mode-deck .hint { display: block; }
   position: relative;
 }
 .compassion-note::before {
-  content: '♡  a note for you';
+  content: 'if this is your story';
   display: block;
   margin-bottom: 0.55rem;
   font-family: var(--mono);
@@ -693,7 +703,10 @@ body.mode-deck .hint { display: block; }
   <button class="view-toggle__btn" data-mode="deck" aria-pressed="false" type="button">Slides</button>
 </div>
 
-<a class="cross-link" href="../index.html" title="Back to the index of explainers">← Index</a>
+<nav class="cross-nav" aria-label="Other reads">
+  <a class="cross-link" href="../index.html" title="Back to the index of explainers">← Index</a>
+  <a class="cross-link cross-link--direct" href="for-those-who-can-take-it--the-folly.html" title="The direct, unfiltered version of this read">Direct version →</a>
+</nav>
 
 <div class="progress"><div class="progress__fill" id="progressFill"></div></div>
 
@@ -713,11 +726,10 @@ body.mode-deck .hint { display: block; }
         <em>What actually makes a rapist, a killer, a thief &mdash; and what doesn't.</em>
       </h1>
       <p class="lede reveal">
-        Thirteen slides on the composite lie that justified Duterte's drug war &mdash; the
-        rhetoric that drug addicts are rapists, killers, and thieves who deserve to die. The
-        folly of believing it. The cost of acting on it: ~30,000 mostly-poor Filipinos dead.
-        For the brothers, sisters, and pastors who heard <em>"drug addict"</em> and pictured
-        the worst.
+        Fourteen slides on the central composite claim used to justify Duterte's drug war &mdash;
+        that drug users are rapists, killers, and thieves who deserve to die &mdash; examined
+        against the research record. For Filipinos who heard <em>"drug addict"</em> and
+        formed a mental picture worth re-examining.
       </p>
       <p class="body reveal" style="color: var(--text-muted); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 1.2rem;">
         High-quality sources only · NIDA · WHO · CDC · BJS · OJP · HRW · Amnesty · ICC · peer-reviewed journals
@@ -742,12 +754,12 @@ body.mode-deck .hint { display: block; }
     </div>
   </section>
 
-  <!-- ============ SLIDE 2 — The Composite Lie ============ -->
+  <!-- ============ SLIDE 2 — The Central Claim ============ -->
   <section class="slide slide--quotes" data-slide="2">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">The folly began here</div>
+      <div class="eyebrow eyebrow--red reveal">The argument that opened the door</div>
       <h2 class="subhead reveal">
-        The composite lie that opened the door to the killings.<br/>
+        The central claim that opened the door to the killings.<br/>
         <em>"Drug addict" became "rapist, killer, thief, deserves death" &mdash; in one breath.</em>
       </h2>
 
@@ -785,10 +797,10 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 3 — Drug user ≠ Rapist ============ -->
   <section class="slide slide--quotes" data-slide="3">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">Folly #1 · the rape justification</div>
+      <div class="eyebrow eyebrow--red reveal">Folly #1 · drug user → rapist</div>
       <h2 class="subhead reveal">
         Drug user ≠ rapist.<br/>
-        <em>Wrong in both directions &mdash; and the war was built on it.</em>
+        <em>Both directions of the claim fail under scrutiny.</em>
       </h2>
 
       <div class="bidirect">
@@ -828,9 +840,9 @@ body.mode-deck .hint { display: block; }
         the experience of survivors is real, and what is done in these crimes is never the
         survivor's fault. The research above describes patterns across the people who commit
         these crimes &mdash; it does not reduce any individual story to a number. The
-        statistics exist here for one reason only: to show that the cartoon used to justify
-        EJKs does not match the evidence &mdash; and that the killings did not make survivors
-        any safer. <strong>Real safety, real justice, and real accountability remain unfinished
+        statistics exist here for one reason only: to show that the stylized image used to
+        justify EJKs does not match the evidence &mdash; and that the killings did not make
+        survivors any safer. <strong>Real safety, real justice, and real accountability remain unfinished
         work &mdash; owed to every survivor, in every case still without closure.</strong>
       </div>
 
@@ -843,10 +855,10 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 4 — Drug user ≠ Killer ============ -->
   <section class="slide slide--quotes" data-slide="4">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">Folly #2 · the "shoot them dead" justification</div>
+      <div class="eyebrow eyebrow--red reveal">Folly #2 · drug user → killer</div>
       <h2 class="subhead reveal">
         Drug user ≠ killer.<br/>
-        <em>Only 3.9 % of US homicides are narcotics-related &mdash; yet we shot tens of thousands here.</em>
+        <em>Only 3.9 % of US homicides are narcotics-related &mdash; a useful benchmark for the claim.</em>
       </h2>
 
       <div class="bidirect">
@@ -871,7 +883,7 @@ body.mode-deck .hint { display: block; }
             Inmates</strong>: violent offenders were only <strong>10 %</strong> likely to have
             committed the crime for drug money (vs. 30 % property, 26 % drug). Most "drug-related"
             violence is <strong>systemic</strong> &mdash; drug-market turf disputes (Goldstein 1985,
-            OJP) &mdash; not the cartoon addict who snapped.
+            OJP) &mdash; not the stylized image of an addict who snapped.
           </div>
         </div>
       </div>
@@ -900,10 +912,10 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 5 — Drug user ≠ Thief (the nuanced case) ============ -->
   <section class="slide slide--quotes" data-slide="5">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">Folly #3 · the "thief" justification</div>
+      <div class="eyebrow eyebrow--red reveal">Folly #3 · drug user → thief</div>
       <h2 class="subhead reveal">
         Drug user ≠ thief &mdash; and where the link is real, it points to treatment, not bullets.<br/>
-        <em>The folly was answering theft with murder.</em>
+        <em>Treatment and economic safety nets produce more durable safety than alley killings.</em>
       </h2>
 
       <div class="bidirect">
@@ -960,10 +972,10 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 6 — What actually predicts these crimes ============ -->
   <section class="slide" data-slide="6">
     <div class="slide__inner">
-      <div class="eyebrow reveal">The folly of ignoring the actual causes</div>
+      <div class="eyebrow reveal">What the research actually predicts</div>
       <h2 class="subhead reveal">
         It was never drugs. It was childhood, attachment, and how violence was modeled.<br/>
-        <em>We killed a symptom and called it a cure.</em>
+        <em>The campaign acted on a symptom; the evidence points to causes elsewhere.</em>
       </h2>
 
       <div class="stat-row">
@@ -1009,10 +1021,10 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 7 — Drug-use spectrum & recovery ============ -->
   <section class="slide" data-slide="7">
     <div class="slide__inner">
-      <div class="eyebrow reveal">The medical folly</div>
+      <div class="eyebrow reveal">Use, dependence, and recovery</div>
       <h2 class="subhead reveal">
         Use ≠ addiction. Addiction ≠ death sentence.<br/>
-        <em>The "point of no return" framing is medically false &mdash; and was the licence to give up on people.</em>
+        <em>The "point of no return" framing is medically false.</em>
       </h2>
 
       <div class="spectrum reveal">
@@ -1058,18 +1070,18 @@ body.mode-deck .hint { display: block; }
     </div>
   </section>
 
-  <!-- ============ SLIDE 8 — Christian cartoon vs reality ============ -->
+  <!-- ============ SLIDE 8 — The mental picture vs reality ============ -->
   <section class="slide slide--quotes" data-slide="8">
     <div class="slide__inner">
-      <div class="eyebrow reveal">The cartoon that fuelled the folly</div>
+      <div class="eyebrow reveal">The mental picture the rhetoric painted</div>
       <h2 class="subhead reveal">
-        When the pulpit said <em>"drug addict,"</em> what did you picture?<br/>
-        <em>The image in your head was always class-coded &mdash; and that image did the killing before any bullet did.</em>
+        When the pulpit said <em>"drug addict,"</em> what did most listeners picture?<br/>
+        <em>The image carried in many heads was already class-coded &mdash; and the image was already half the policy.</em>
       </h2>
 
       <div class="bidirect">
         <div class="bidirect__col bidirect__col--reverse reveal">
-          <div class="bidirect__label">The cartoon (what we pictured)</div>
+          <div class="bidirect__label">The mental picture (what the rhetoric painted)</div>
           <div class="bidirect__verdict">A shabu-crazed predator from the slum.</div>
           <div class="bidirect__body">
             Male. Poor. Tattooed. Unpredictable. Dangerous to your daughter. Already half a
@@ -1090,9 +1102,9 @@ body.mode-deck .hint { display: block; }
       </div>
 
       <p class="body reveal" style="margin-top: 0.6rem;">
-        The cartoon was always already half a verdict. The image did the killing before any
-        bullet did. And the cartoon was <strong>never</strong> the businessman with a coke habit
-        or the mayor's son with a pill problem. The cartoon, by design, lived in the slum.
+        The picture was always already half a verdict. The image did the killing before any
+        bullet did. And the picture was <strong>never</strong> the businessman with a coke habit
+        or the mayor's son with a pill problem. By design, it lived in the slum.
       </p>
 
       <div class="sources">
@@ -1104,7 +1116,7 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 9 — The class war disguised as a drug war ============ -->
   <section class="slide slide--quotes" data-slide="9">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">The targeting folly · who actually died</div>
+      <div class="eyebrow eyebrow--red reveal">Who actually died · the class pattern</div>
       <h2 class="subhead reveal">
         <em>"If you are poor, you are killed."</em><br/>
         &mdash; Amnesty International report title, 2017. The war on drugs was a war on the poor.
@@ -1166,26 +1178,28 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 10 — The folly of the comfortable Christian ============ -->
   <section class="slide" data-slide="10">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">The folly of distance</div>
+      <div class="eyebrow eyebrow--red reveal">Distance from the harm</div>
       <h2 class="subhead reveal">
-        You were never going to be on the list.<br/>
-        <em>And that is why the killings did not break your sleep.</em>
+        Few of the readers of this deck were ever at risk of being on a tokhang list.<br/>
+        <em>That distance shaped how the campaign was received.</em>
       </h2>
 
       <p class="body reveal" style="max-width: 72ch;">
-        The Christians who supported &mdash; or quietly tolerated &mdash; the drug war were
-        overwhelmingly <strong>not the people being killed</strong>. The dead came from
-        informal settlements: Caloocan alleys, Tondo backlots, Payatas slopes. The pulpit
-        congregations came from gated subdivisions, condominiums, professional-class
-        suburbs. <strong>Two Philippines. One paid for the other's policy.</strong>
+        Most of the Christians who supported the drug war &mdash; and most who let it pass
+        without objection &mdash; were overwhelmingly <strong>not from the neighborhoods
+        being killed</strong>. The dead came from informal settlements: Caloocan alleys,
+        Tondo backlots, Payatas slopes. Many pulpit congregations meet in gated subdivisions,
+        condominiums, professional-class suburbs. <strong>Two Philippines &mdash; and the
+        Philippines that paid the price of the policy was not, in the main, the Philippines
+        that voted for it.</strong>
       </p>
 
       <p class="body reveal" style="max-width: 72ch;">
         It was easy to support harsher judgment for the poor because the harsh judgment was
         always happening to <em>other people</em>. The pulpit said <em>"drug addict"</em>
         and the comfortable Christian heard <em>"those people in the slum"</em> &mdash; not
-        <em>"my cousin, my uncle, my neighbor."</em> The cartoon worked precisely because
-        the audience was insulated from the cost.
+        <em>"my cousin, my uncle, my neighbor."</em> The image did its work precisely
+        because much of the audience was insulated from the cost.
       </p>
 
       <p class="body reveal" style="max-width: 72ch; color: var(--accent-gold); font-weight: 500;">
@@ -1220,7 +1234,7 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 11 — How tokhang lists were actually made ============ -->
   <section class="slide" data-slide="11">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">The procedural folly · how the lists were made</div>
+      <div class="eyebrow eyebrow--red reveal">How the tokhang lists were assembled</div>
       <h2 class="subhead reveal">
         How a name landed on a tokhang list.<br/>
         <em>No DSM-5. No clinician. No lawyer. No right of appeal. And in thousands of cases &mdash; no trial.</em>
@@ -1331,18 +1345,18 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 13 — Christian mirror ============ -->
   <section class="slide" data-slide="13">
     <div class="slide__inner">
-      <div class="eyebrow eyebrow--red reveal">For my brother and sister in Christ</div>
+      <div class="eyebrow reveal">For my brother and sister in Christ</div>
       <h2 class="subhead reveal">
         Six questions for the mirror.<br/>
-        <em>The folly cannot end while we refuse to look at ourselves.</em>
+        <em>Worth sitting with honestly.</em>
       </h2>
 
       <div class="mirror">
         <div class="mirror__item reveal">
           <div class="mirror__num">01</div>
           <div class="mirror__q">
-            When the pulpit said <strong>"drug addict,"</strong> did I picture the shabu-crazed
-            predator from the slum &mdash; or a real human being I have ever actually known?
+            When the pulpit said <strong>"drug addict,"</strong> what mental image did I form
+            &mdash; and how closely did it match the actual people the lists were drawn from?
           </div>
           <div class="mirror__ref">Matthew 25:40</div>
         </div>
@@ -1365,9 +1379,8 @@ body.mode-deck .hint { display: block; }
         <div class="mirror__item reveal">
           <div class="mirror__num">04</div>
           <div class="mirror__q">
-            Did my silence cost me nothing because the killings were happening in
-            <strong>someone else's barangay</strong> &mdash; never mine, never my children's?
-            Was that not the very <strong>favoritism</strong> James warned against?
+            How many of the people killed lived in <strong>neighborhoods like mine</strong>?
+            What does the answer say about the <strong>favoritism</strong> James names?
           </div>
           <div class="mirror__ref">James 2:1&ndash;9</div>
         </div>
@@ -1382,8 +1395,7 @@ body.mode-deck .hint { display: block; }
         <div class="mirror__item reveal">
           <div class="mirror__num">06</div>
           <div class="mirror__q">
-            When the next "drug suspect" is shot, <strong>will my voice be there</strong> &mdash;
-            or will I have already spent it defending the killers?
+            When the next "drug suspect" is shot, <strong>where will my voice be</strong>?
           </div>
           <div class="mirror__ref">Proverbs 31:8&ndash;9</div>
         </div>
@@ -1394,10 +1406,10 @@ body.mode-deck .hint { display: block; }
   <!-- ============ SLIDE 14 — Forbearance ≠ Impunity (dawn close) ============ -->
   <section class="slide slide--dawn" data-slide="14">
     <div class="slide__inner">
-      <div class="eyebrow reveal">The resolution · naming the folly, refusing the impunity</div>
+      <div class="eyebrow reveal">The resolution · sharing the lament, refusing the impunity</div>
       <h2 class="subhead reveal">
         We can share the lament on both sides.<br/>
-        <em>We cannot share the impunity. We cannot bless the folly.</em>
+        <em>We cannot share the impunity.</em>
       </h2>
 
       <div class="balance">
@@ -1445,7 +1457,7 @@ body.mode-deck .hint { display: block; }
         <div class="cta__action reveal">
           <div class="cta__action__num">03</div>
           <div class="cta__action__verb">Refuse</div>
-          <div class="cta__action__desc">The composite lie. The cartoon. The "they-deserved-it" shrug. The silence in your group chats.</div>
+          <div class="cta__action__desc">The composite lie &mdash; now examined. The stylized image. The "they-deserved-it" shrug. The silence in group chats.</div>
         </div>
         <div class="cta__action reveal">
           <div class="cta__action__num">04</div>
