@@ -633,7 +633,12 @@ footer.landing__footer em { font-style: italic; color: var(--accent-gold); text-
 
   <section class="share" aria-labelledby="share-h">
     <div class="share__card">
-      <div class="share__qr" id="qrcode" role="img" aria-label="QR code linking to this site"></div>
+      <div class="share__qr">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&ecc=H&color=07070c&bgcolor=ffffff&data=https%3A%2F%2Fnot-made-to-live-in-the-lie.github.io%2Fduterte-2028%2F"
+          alt="QR code linking to https://not-made-to-live-in-the-lie.github.io/duterte-2028/"
+          width="200" height="200" loading="lazy" />
+      </div>
       <div class="share__qr-label">Scan to read</div>
     </div>
     <div class="share__text">
@@ -663,23 +668,6 @@ footer.landing__footer em { font-style: italic; color: var(--accent-gold); text-
 
 </main>
 
-<!-- QR code library (client-side generation, no external API call after page load) -->
-<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@04f46c6/qrcode.min.js"></script>
-<script>
-(function() {
-  if (typeof QRCode === 'undefined') return;
-  var el = document.getElementById('qrcode');
-  if (!el) return;
-  new QRCode(el, {
-    text: 'https://not-made-to-live-in-the-lie.github.io/duterte-2028/',
-    width: 200,
-    height: 200,
-    colorDark: '#07070c',
-    colorLight: '#ffffff',
-    correctLevel: QRCode.CorrectLevel.H
-  });
-})();
-</script>
 
 </body>
 </html>

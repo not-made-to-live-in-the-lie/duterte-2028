@@ -309,7 +309,12 @@ body.mode-4up .four-up-wrap { display: block; }
         <p class="card__subtitle">Two reckonings on the drug war &mdash; before you vote.</p>
       </div>
       <div class="card__body">
-        <div class="card__qr" data-qr role="img" aria-label="QR code linking to the site"></div>
+        <div class="card__qr">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=600x600&ecc=H&margin=0&color=16161c&bgcolor=ffffff&data=https%3A%2F%2Fnot-made-to-live-in-the-lie.github.io%2Fduterte-2028%2F"
+            alt="QR code linking to https://not-made-to-live-in-the-lie.github.io/duterte-2028/"
+            width="300" height="300" />
+        </div>
         <div class="card__pitch">
           <p class="card__pitch-line">
             An <strong>evidence-based reckoning</strong> on the drug war &mdash; drawn from
@@ -348,27 +353,12 @@ body.mode-4up .four-up-wrap { display: block; }
 
 </div>
 
-<!-- QR generator (client-side, no external API after load) -->
-<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@04f46c6/qrcode.min.js"></script>
+<!-- Cloning + print-mode logic. QR itself is a static <img> served by api.qrserver.com,
+     which renders reliably on every device (no JS library, no canvas issues) -->
 <script>
 (function() {
-  var URL_TARGET = 'https://not-made-to-live-in-the-lie.github.io/duterte-2028/';
 
-  // 1) Generate QR on the template card
-  if (typeof QRCode !== 'undefined') {
-    var qrSlot = document.querySelector('#card-template [data-qr]');
-    if (qrSlot) {
-      new QRCode(qrSlot, {
-        text: URL_TARGET,
-        width: 300, height: 300,
-        colorDark: '#16161c', colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.H
-      });
-    }
-  }
-
-  // 2) Clone the rendered card 4 times into the 4-up sheet
-  //    (run after qrcodejs has had a tick to paint the img)
+  // Clone the template card 4 times into the 4-up sheet
   function build4Up() {
     var template = document.getElementById('card-template');
     var sheet = document.getElementById('sheet-4up');
@@ -378,7 +368,7 @@ body.mode-4up .four-up-wrap { display: block; }
       sheet.appendChild(template.cloneNode(true));
     }
   }
-  setTimeout(build4Up, 60);
+  build4Up();
 
   // 3) Mode toggling — update body class, @page rule, instructions
   var singleBtn = document.getElementById('printSingleBtn');
