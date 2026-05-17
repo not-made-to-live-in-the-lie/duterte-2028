@@ -406,6 +406,75 @@ footer.landing__footer em { font-style: italic; color: var(--accent-gold); text-
 .landing-warning__text strong { color: var(--accent-rose-soft); font-weight: 600; }
 .landing-warning__text em { color: var(--accent-gold); font-style: italic; }
 
+/* Share / QR code card — screenshot-friendly */
+.share {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+  padding: 1.6rem 1.6rem;
+  background: linear-gradient(180deg, rgba(15, 15, 23, 0.6), rgba(15, 15, 23, 0.3));
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.share__card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.share__qr {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+}
+.share__qr img, .share__qr canvas { display: block; width: 100% !important; height: 100% !important; }
+.share__qr-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #07070c;
+  text-align: center;
+  font-weight: 600;
+}
+.share__text { display: grid; gap: 0.7rem; }
+.share__title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+.share__title em { font-style: italic; color: var(--accent-gold); font-weight: 400; }
+.share__intro { font-size: 0.92rem; line-height: 1.55; color: var(--text-secondary); }
+.share__url {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.04em;
+  word-break: break-all;
+}
+.share__hint {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+@media (max-width: 700px) {
+  .share { grid-template-columns: 1fr; gap: 1.4rem; padding: 1.4rem; justify-items: center; text-align: center; }
+  .share__text { justify-items: center; }
+  .share__url { text-align: center; }
+}
+
 @media (max-width: 700px) {
   .landing { padding: 8vh 5vw 6vh; gap: 2.5rem; }
   .cards { grid-template-columns: 1fr; gap: 1rem; }
@@ -542,6 +611,24 @@ footer.landing__footer em { font-style: italic; color: var(--accent-gold); text-
     is remembered.
   </p>
 
+  <section class="share" aria-labelledby="share-h">
+    <div class="share__card">
+      <div class="share__qr" id="qrcode" role="img" aria-label="QR code linking to this site"></div>
+      <div class="share__qr-label">Scan to read</div>
+    </div>
+    <div class="share__text">
+      <h2 id="share-h" class="share__title">Share this with someone <em>who needs it.</em></h2>
+      <p class="share__intro">
+        Screenshot the QR code and send it to the friend, the relative, the pastor still
+        considering a <strong>Duterte 2028</strong> vote. Long-press / right-click the
+        card to save the image. The QR encodes this site's URL &mdash; no app needed,
+        scans with any phone camera.
+      </p>
+      <div class="share__url">not-made-to-live-in-the-lie.github.io/duterte-2028/</div>
+      <div class="share__hint">Scan · Screenshot · Share</div>
+    </div>
+  </section>
+
   <footer class="landing__footer">
     A Filipino civic project published ahead of the 2028 election. Reproduce, fork, translate,
     and remix freely.<br/>
@@ -551,6 +638,24 @@ footer.landing__footer em { font-style: italic; color: var(--accent-gold); text-
   </footer>
 
 </main>
+
+<!-- QR code library (client-side generation, no external API call after page load) -->
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@04f46c6/qrcode.min.js"></script>
+<script>
+(function() {
+  if (typeof QRCode === 'undefined') return;
+  var el = document.getElementById('qrcode');
+  if (!el) return;
+  new QRCode(el, {
+    text: 'https://not-made-to-live-in-the-lie.github.io/duterte-2028/',
+    width: 200,
+    height: 200,
+    colorDark: '#07070c',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
+  });
+})();
+</script>
 
 </body>
 </html>

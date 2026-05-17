@@ -155,7 +155,7 @@ body.mode-deck .progress { display: block; }
 }
 .slide:last-child { border-bottom: 0; }
 body.mode-deck .slide {
-  position: absolute; inset: 0; min-height: 0; padding: 5vh 8vw;
+  position: absolute; inset: 0; min-height: 0; padding: 5vh 8vw 5.5rem;
   opacity: 0; transform: translateY(40px); pointer-events: none;
   transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
   border-bottom: 0;
@@ -164,7 +164,16 @@ body.mode-deck .slide.active { opacity: 1; transform: translateY(0); pointer-eve
 body.mode-deck .slide.exiting { opacity: 0; transform: translateY(-40px); }
 
 .slide__inner { width: 100%; max-width: 1280px; display: grid; gap: clamp(1.2rem, 2.5vw, 2.2rem); }
-body.mode-deck .slide__inner { height: 100%; align-content: center; }
+body.mode-deck .slide__inner {
+  height: 100%;
+  align-content: safe center;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+body.mode-deck .slide__inner::-webkit-scrollbar { width: 6px; }
+body.mode-deck .slide__inner::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+body.mode-deck .slide__inner::-webkit-scrollbar-track { background: transparent; }
 
 .eyebrow {
   font-family: var(--mono); font-size: 0.75rem; font-weight: 400;
@@ -616,7 +625,7 @@ body.mode-deck .hint { display: block; }
 /* Responsive */
 @media (max-width: 900px) {
   .slide { padding: 7vh 5vw 5vh; }
-  body.mode-deck .slide { padding: 4vh 5vw; }
+  body.mode-deck .slide { padding: 4vh 5vw 5rem; }
   .bidirect, .scripture-grid, .balance, .stat-row { grid-template-columns: 1fr; gap: 1.2rem; }
   .fusion-chain { grid-template-columns: 1fr; }
   .fusion-arrow { display: none; }
@@ -654,9 +663,25 @@ body.mode-deck .hint { display: block; }
 }
 @media (max-height: 500px) and (orientation: landscape) {
   .slide { min-height: 100vh; padding: 4vh 5vw; }
-  body.mode-deck .slide { padding: 3vh 5vw; }
+  body.mode-deck .slide { padding: 3vh 5vw 4.5rem; }
   h1.headline { font-size: clamp(1.8rem, 6vw, 3.2rem); }
   h2.subhead { font-size: clamp(1.3rem, 4.5vw, 2rem); }
+  .compassion-note {
+    padding: 0.7rem 0.95rem 0.7rem 1.1rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    margin: 0.5rem 0 0.2rem;
+  }
+  .compassion-note::before { font-size: 0.55rem; margin-bottom: 0.3rem; }
+  .content-notice {
+    padding: 0.7rem 0.95rem;
+    font-size: 0.78rem;
+  }
+  .content-notice__text { font-size: 0.78rem; line-height: 1.45; }
+  .bidirect__col { padding: 1rem 1.1rem; gap: 0.55rem; }
+  .bidirect__claim { font-size: 0.9rem; }
+  .bidirect__verdict { font-size: 1rem; }
+  .bidirect__body { font-size: 0.82rem; line-height: 1.45; }
 }
 </style>
 </head>
@@ -797,15 +822,15 @@ body.mode-deck .hint { display: block; }
       </p>
 
       <div class="compassion-note reveal">
-        To anyone reading this who has survived sexual assault &mdash; <strong>whenever it
-        happened, whoever did it, and whether or not any substance was involved</strong>:
-        your experience is real, and what was done to you was never your fault. The research
-        above describes patterns across the people who commit these crimes &mdash; not your
-        story. Statistics cannot measure your pain, and they are not meant to. They are
-        here for one reason only: to show that the cartoon used to justify EJKs does not
-        match the evidence &mdash; and that the killings did not protect survivors like
-        you. <strong>The unfinished work of real safety, real justice, and real
-        accountability for the person who harmed you is still owed to you.</strong>
+        To anyone reading this who carries the weight of sexual assault &mdash; <strong>whenever
+        it happened, whoever did it, and whether or not any substance was involved</strong>:
+        the experience of survivors is real, and what is done in these crimes is never the
+        survivor's fault. The research above describes patterns across the people who commit
+        these crimes &mdash; it does not reduce any individual story to a number. The
+        statistics exist here for one reason only: to show that the cartoon used to justify
+        EJKs does not match the evidence &mdash; and that the killings did not make survivors
+        any safer. <strong>Real safety, real justice, and real accountability remain unfinished
+        work &mdash; owed to every survivor, in every case still without closure.</strong>
       </div>
 
       <div class="sources">
@@ -858,11 +883,11 @@ body.mode-deck .hint { display: block; }
       <div class="compassion-note reveal">
         To anyone grieving someone lost to homicide &mdash; drug-related, vigilante, EJK,
         domestic, accident-disguised-as-violence, or any cause at all, whether years ago or
-        recent: <strong>this deck does not minimize your loss.</strong> Statistics are how we
-        expose policy failures; they are not how we measure your grief. Your loved one was
-        not a number. The numbers exist here to show that the policy did not honor them
-        either &mdash; it killed in their name without protecting anyone, and it never
-        delivered the justice their case deserved.
+        recent: <strong>this deck does not minimize losses like these.</strong> Statistics
+        are how we expose policy failures; they are not how anyone measures grief. No loved
+        one in any of these cases is a number. The numbers exist here to show that the
+        policy did not honor them either &mdash; it killed in their name without protecting
+        anyone, and the justice these cases deserve has still not been delivered.
       </div>
 
       <div class="sources">
@@ -914,14 +939,15 @@ body.mode-deck .hint { display: block; }
       </p>
 
       <div class="compassion-note reveal">
-        To anyone, anywhere, who has been hurt by theft, addiction-adjacent crime, or a
-        loved one's substance struggle &mdash; <strong>whether during the drug war or long
-        before it</strong>: your fear was, and is, real. The case here is not that the
-        harm you experienced was imaginary &mdash; it is that <strong>bullets in alleys
-        did not protect you</strong>, and the kingpins were never jailed. The data shows
-        it. You deserved real safety: rehab access, livelihood, community policing, due
+        To anyone, anywhere, who has been hurt by theft, addiction-adjacent crime, or
+        watched a loved one's substance struggle &mdash; <strong>whether during the drug
+        war or long before it</strong>: that fear was, and is, real for the communities
+        who lived it. The case here is not that those harms were imaginary &mdash; it is
+        that <strong>bullets in alleys did not protect those communities</strong>, and
+        the kingpins were never jailed. The data shows it. Communities that lived with
+        this deserved real safety: rehab access, livelihood, community policing, due
         process for the few who do harm, and accountability all the way up the chain.
-        Not a war that killed your neighbors and left the actual traffickers untouched.
+        Not a war that killed neighbors and left the actual traffickers untouched.
       </div>
 
       <div class="sources">
